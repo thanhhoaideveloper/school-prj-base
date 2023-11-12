@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="$configs['description'] ?? DESCRIPTION }}">
     <meta name="author" content="">
-    <title>SB Admin 2 - Dashboard</title>
+    <title>{{ $configs['title'] ?? TITLE }}</title>
+    <link rel="shortcut icon" href="{{ asset($configs['favicon']) }}">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
@@ -14,6 +15,8 @@
         rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
 </head>
 <body id="page-top">
     <div id="wrapper">
@@ -59,6 +62,7 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+    <script src="{{ asset('js/admin-custom.js') }}"></script>
 </body>
 
 </html>

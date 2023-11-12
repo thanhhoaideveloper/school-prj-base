@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SiteSettingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,12 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('', 'index')->name('dashboard');
+    });
+
+    //site setting
+    Route::controller(SiteSettingController::class)->prefix('site')->name('site.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::post('/update', 'update')->name('update');
     });
 });
 

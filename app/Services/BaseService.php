@@ -21,6 +21,16 @@ class BaseService
     }
 
     /**
+     * all
+     *
+     * @return Collection
+     */
+    public function first()
+    {
+        return $this->model->first();
+    }
+
+    /**
      * find
      *
      * @param  int $id

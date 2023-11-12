@@ -1,0 +1,33 @@
+/**
+* Input form
+*/
+.form-title{
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #e0f0f0;
+    color: black;
+}
+
+.input-radio:checked + label {
+    background-color:#5AB8AB !important;  
+    top:0;
+    left:0;
+    z-index:2;
+    color: white
+}
+
+.input-label {
+    background: #e0f0f0;
+    color: black;
+    font-size: 16px;
+    font-weight: 800;
+    width: 20%;
+    vertical-align: middle !important;
+}
+
+.input-form {
+    vertical-align: middle !important;
+}
+/**
+* End Input form
+*/
