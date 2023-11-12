@@ -6,6 +6,19 @@ const reviewUpload = (input, previewId) => {
     }
 };
 
+const removeLoading = () => {
+    $('.btn-loading span').remove();
+}
+
+const resetForm = (id) => {
+    $(`.${id}`)[0].reset();
+}
+
+const closeModel = (id) => {
+    resetForm('form-js');
+    $(`#${id}`).modal('hide');
+}
+
 $(document).on('click', '.btn-loading', function () {
     $(this).append('<span class="spinner-border spinner-border-sm mr-1 ml-1" role="status" aria-hidden="true"></span>');
 });

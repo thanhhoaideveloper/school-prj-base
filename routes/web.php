@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
+use App\Http\Controllers\Admin\SlideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,12 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('', 'index')->name('dashboard');
+    });
+
+    //silde
+    Route::controller(SlideController::class)->prefix('slide')->name('slide.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::post('create', 'create')->name('create');
     });
 
     //site setting

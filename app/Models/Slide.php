@@ -11,6 +11,7 @@ class Slide extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'thumbnail',
         'title',
         'content',
         'link'
