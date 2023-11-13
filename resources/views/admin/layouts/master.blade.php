@@ -7,7 +7,7 @@
     <meta name="description" content="$configs['description'] ?? DESCRIPTION }}">
     <meta name="author" content="">
     <title>{{ $configs['title'] ?? TITLE }}</title>
-    <link rel="shortcut icon" href="{{ asset($configs['favicon']) }}">
+    <link rel="shortcut icon" href="{{ asset($configs['favicon'] ?? '') }}">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
