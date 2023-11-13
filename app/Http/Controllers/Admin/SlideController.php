@@ -40,7 +40,7 @@ class SlideController extends Controller
             }
 
             $data = $validator->getData();
-            //check image logo
+            //check image thumbnail
             if($request->file('thumbnail')){
                 $data['thumbnail'] = storeImage(
                                             $request->file('thumbnail'), 
@@ -49,11 +49,9 @@ class SlideController extends Controller
             }
             $this->slideService->save($data);
 
-            flash()->addSuccess(SAVE_SUCCESS);
             return response()->json(['success' => true]);
         }catch(Exception $e){
-            flash()->addError($e->getMessage());
-            return redirect()->back();
+            return response()->json(['error' => $e->getMessage()]);
         }
     }
 }

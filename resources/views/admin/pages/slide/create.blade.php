@@ -69,27 +69,25 @@
         $(".btn-submit-create").click(function(e){
             e.preventDefault();
             var _token = $("input[name='_token']").val();
-            var thumbnail = $("input[name='thumbnail']").val();
+            var thumbnail = $("input[name='thumbnail']")[0].files;
             var title = $("input[name='title']").val();
             var link = $("input[name='link']").val();
             var content = $("input[name='content']").val();
-            var formData = new FormData({
-                _token,
-                thumbnail : $("input[name='thumbnail']")[0].files[0],
-                title,
-                link,
-                content
-            });
+
+            var formData = new FormData();
+            formData.append('_token', _token);
+            formData.append('thumbnail', thumbnail[0]);
+            formData.append('title', title);
+            formData.append('link', link);
+            formData.append('content', content);
+
             $.ajax({
                 url: "{{ route('admin.slide.create') }}",
                 method: 'POST',
-                data: {
-                    _token,
-                    thumbnail,
-                    title,
-                    link,
-                    content
-                },
+                data: formData,
+                contentType: false,
+                processData: false,
+                dataType: 'json',
                 success: function(data){
                     if(data.hasOwnProperty('errors')){
                         let res = data.errors;
@@ -97,6 +95,7 @@
                             $(`#${index}`).html(res[index][0]);
                         }
                     }else{
+                        flasher.success("Lưu thành công");
                         closeModel('create');
                     }
                     removeLoading();
