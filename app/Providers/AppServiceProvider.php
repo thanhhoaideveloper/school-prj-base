@@ -24,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        FacadesView::share('configs', getConfig());
+        if(!$this->app->runningInConsole()){
+            FacadesView::share('configs', getConfig());
+        }
     }
 }
