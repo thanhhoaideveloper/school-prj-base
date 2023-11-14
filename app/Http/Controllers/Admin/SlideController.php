@@ -17,8 +17,10 @@ class SlideController extends Controller
         $this->slideService = $slideService;
     }
 
-    public function index(Request $request){
-        return view('admin.pages.slide.index');
+    public function index(){
+        $viewModel = [];
+        $viewModel['sliders'] = $this->slideService->all();
+        return view('admin.pages.slide.index', $viewModel);
     }
 
     public function create(Request $request){
