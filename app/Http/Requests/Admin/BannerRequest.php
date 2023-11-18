@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SlideRequest extends FormRequest
+class BannerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,14 +25,13 @@ class SlideRequest extends FormRequest
     {
         return [
             'thumbnail' => [
-                'required',
                 'image',
-                'mimes:png,jpg,jpeg',
-                'mimetypes:image/jpeg,image/png'
+                'mimes:png,jpg,jpeg,gif',
+                'mimetypes:image/jpeg,image/png,image/gif'
             ],
             'title' => 'required',
-            'link' => 'required',
-            'content' => ''
+            'link' => '',
+            'content' => 'required'
         ];
     }
 }

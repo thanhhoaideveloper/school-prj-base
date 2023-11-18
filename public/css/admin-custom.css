@@ -31,3 +31,18 @@
 /**
 * End Input form
 */
+
+/* Upload image */
+
+.upload-image{
+    height: 200px;
+    width: 100%;
+    border: 1px dashed rgb(133, 133, 133);
+    cursor: pointer;
+}
+
+.upload-image i {
+    font-size: 25px;
+}
+
+/* End upload image */

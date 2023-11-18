@@ -40,10 +40,10 @@
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <li class="nav-item  {{ isCheckActiveRoute('admin.slide.index') }}">
-        <a class="nav-link" href="{{ route('admin.slide.index') }}">
+    <li class="nav-item  {{ isCheckActiveRoute('admin.banner.index') }}">
+        <a class="nav-link" href="{{ route('admin.banner.index') }}">
             <i class="far fa-images"></i>
-            <span>Slide</span></a>
+            <span>Banner</span></a>
     </li>
     <li class="nav-item  {{ isCheckActiveRoute('admin.site.index') }}">
         <a class="nav-link" href="{{ route('admin.site.index') }}">
