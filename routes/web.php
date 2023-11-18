@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthenticateController;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
+use App\Http\Controllers\Admin\SlideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,12 @@ Route::get('/', function () {
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('', 'index')->name('dashboard');
+    });
+
+    //banner
+    Route::controller(BannerController::class)->prefix('banner')->name('banner.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::post('save', 'save')->name('save');
     });
 
     //site setting

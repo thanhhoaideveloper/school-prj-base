@@ -40,7 +40,11 @@
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <!-- Nav Item - Charts -->
+    <li class="nav-item  {{ isCheckActiveRoute('admin.banner.index') }}">
+        <a class="nav-link" href="{{ route('admin.banner.index') }}">
+            <i class="far fa-images"></i>
+            <span>Banner</span></a>
+    </li>
     <li class="nav-item  {{ isCheckActiveRoute('admin.site.index') }}">
         <a class="nav-link" href="{{ route('admin.site.index') }}">
             <i class="fas fa-tools"></i>

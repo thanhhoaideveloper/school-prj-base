@@ -12,6 +12,7 @@ const SITE_NOT_FOUND = "Site của bạn chưa khởi tạo";
 
 //success, error
 const UPDATE_SUCCESS = "Cập nhật thành công";
+const SAVE_SUCCESS = "Lưu thành công";
 
 //title, description default
 const TITLE = "Thiết kế website chuyên nghiệp";
