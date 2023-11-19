@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\SlideController;
@@ -37,7 +38,12 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     //site setting
     Route::controller(SiteSettingController::class)->prefix('site')->name('site.')->group(function () {
         Route::get('','index')->name('index');
-        Route::post('/update', 'update')->name('update');
+    });
+
+    //core
+    Route::controller(CoreValueController::class)->prefix('core')->name('core.')->group(function(){
+        Route::get('','index')->name('index');
+        Route::post('create','create')->name('create');
     });
 });
 
