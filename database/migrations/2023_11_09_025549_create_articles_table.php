@@ -19,6 +19,9 @@ class CreateArticlesTable extends Migration
             $table->text('content');
             $table->string('thumbnail');
             $table->text('description');
+            $table->boolean('is_active_event');
+            $table->date('create_by');
+            $table->date('update_by');
             $table->integer('author_id');
             $table->integer('status')->default(ACTIVE);
 

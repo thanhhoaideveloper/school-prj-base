@@ -15,7 +15,11 @@ class Article extends Model
         'content',
         'thumbnail',
         'description',
-        'author_id'
+        'is_active_event',
+        'create_by',
+        'update_by',
+        'author_id',
+        'status'
     ];
 
 }

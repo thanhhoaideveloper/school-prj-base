@@ -19,7 +19,7 @@ class CreateUserStoriesTable extends Migration
             $table->text('content');
             $table->string('thumbnail')->nullable();
             $table->text('description')->nullable();
-            $table->string('author');
+            $table->string('create_by');
             $table->integer('status')->default(ACTIVE);
 
             $table->softDeletes();
