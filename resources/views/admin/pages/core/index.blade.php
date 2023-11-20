@@ -28,7 +28,7 @@
                                 <td class="align-middle">{{ $item->description }}</td>
                                 <td class="align-middle">
                                     <div class="d-flex">
-                                        <button type="button" class="btn btn-outline-primary w-50">
+                                        <button type="button editRow" data-id="{{ $item->id }}" class="btn btn-outline-primary w-50">
                                             <i class="fas fa-pen"></i>
                                             <span>Cập nhật</span>
                                         </button>

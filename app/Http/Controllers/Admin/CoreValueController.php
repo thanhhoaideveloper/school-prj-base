@@ -54,4 +54,11 @@ class CoreValueController extends Controller
             return response()->json(['error' => $e->getMessage()]);
         }
     }
+
+    /**
+     * API: admin/core/edit/{id}
+     */
+    public function edit($id){
+        return response()->json(['data' => $id]);
+    }
 }
