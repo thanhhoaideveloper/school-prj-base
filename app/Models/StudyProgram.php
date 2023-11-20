@@ -13,6 +13,7 @@ class StudyProgram extends Model
     protected $fillable = [
         'name',
         'description',
+        'image',
         'student',
         'start_time',
         'end_time',

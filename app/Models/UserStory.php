@@ -15,7 +15,7 @@ class UserStory extends Model
         'content',
         'thumbnail',
         'description',
-        'author',
+        'create_by',
         'status'
     ];
 }
