@@ -44,7 +44,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::controller(CoreValueController::class)->prefix('core')->name('core.')->group(function(){
         Route::get('','index')->name('index');
         Route::post('create','create')->name('create');
-        Route::get('edit/{id}', 'edit')->name('edit');
+        Route::get('update/{id}', 'update')->name('update');
+        Route::post('update', 'handleUpdate')->name('handleUpdate');
+        Route::get('destroy/{id}', 'destroy')->name('destroy');
     });
 });
 

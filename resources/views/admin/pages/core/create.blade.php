@@ -34,7 +34,7 @@
                                 <td class="input-label">Hình ảnh: </td>
                                 <td>
                                     <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail" hidden/>
-                                    <div class="d-flex align-items-center justify-content-center upload-image" onclick="uploadImage(this)">
+                                    <div class="d-flex align-items-center justify-content-center upload-image" onclick="uploadImage('input-upload-image')">
                                         <i class="fas fa-plus"></i>
                                     </div>
                                     <span id="thumbnail-message" class="text-danger"></span>

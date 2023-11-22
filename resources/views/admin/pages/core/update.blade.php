@@ -10,6 +10,7 @@
             <div class="modal-body">
                 <form class="form-js">
                     @csrf
+                    <input name="id" hidden />
                     <table class="table table-bordered mb-0 bg-white">
                         <tbody>
                             <tr>
@@ -17,7 +18,7 @@
                                 <td class="input-form">
                                     <input type="text" 
                                             name="title-update" 
-                                            class="form-control form-control-lg"
+                                            class="form-control form-control-lg title-update"
                                             value="{{ old('title-update') }}">
                                     <span id="title-message-update" class="text-danger"></span>
                                 </td>
@@ -33,8 +34,11 @@
                             <tr>
                                 <td class="input-label">Hình ảnh: </td>
                                 <td>
-                                    <input type="file" class="input-upload-image-update" onchange="onChangeInputFile(this)" name="thumbnail-update" hidden/>
-                                    <div class="d-flex align-items-center justify-content-center upload-image" onclick="uploadImage(this)">
+                                    <input type="file" 
+                                            class="input-upload-image-update" 
+                                            onchange="onChangeInputFile(this)" name="thumbnail-update" hidden/>
+                                    <div class="d-flex align-items-center justify-content-center upload-image-update" 
+                                        onclick="uploadImage('input-upload-image-update')">
                                         <i class="fas fa-plus"></i>
                                     </div>
                                     <span id="thumbnail-message-update" class="text-danger"></span>

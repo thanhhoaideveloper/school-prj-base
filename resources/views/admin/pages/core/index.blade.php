@@ -28,14 +28,16 @@
                                 <td class="align-middle">{{ $item->description }}</td>
                                 <td class="align-middle">
                                     <div class="d-flex">
-                                        <button type="button editRow" data-id="{{ $item->id }}" class="btn btn-outline-primary w-50">
+                                        <button type="button" data-id="{{ $item->id }}" class="btn btn-outline-primary w-50 editRow">
                                             <i class="fas fa-pen"></i>
                                             <span>Cập nhật</span>
                                         </button>
-                                        <button type="button" class="btn btn-outline-danger w-50 ml-2">
+                                        <a type="button" 
+                                            href="{{ route('admin.core.destroy', $item->id) }}"
+                                            class="btn btn-outline-danger w-50 ml-2">
                                             <i class="fas fa-trash-alt"></i>
                                             <span>Xoá</span>
-                                        </button>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
@@ -47,5 +49,6 @@
         </div>
     </div>
     @include('admin.pages.core.create')
+    @include('admin.pages.core.update')
     @include('admin.pages.core.script')
 @endsection
