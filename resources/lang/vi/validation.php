@@ -5,5 +5,6 @@ return [
     'numeric' => 'Trường này phải là số',
     'email' => 'Email không hơp lệ',
     'image' => 'Trường này phải là ảnh',
-    'mimes' => 'Kiểu hình ảnh không hợp lệ'
+    'mimes' => 'Kiểu hình ảnh không hợp lệ',
+    'mimetypes' => 'Kiểu ảnh không hợp lệ'
 ];

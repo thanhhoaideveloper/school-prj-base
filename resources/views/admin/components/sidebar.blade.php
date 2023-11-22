@@ -40,6 +40,11 @@
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
+    <li class="nav-item  {{ isCheckActiveRoute('admin.core.index') }}">
+        <a class="nav-link" href="{{ route('admin.core.index') }}">
+            <i class="fas fa-hand-holding-usd"></i>
+            <span>Giá trị cốt lỗi</span></a>
+    </li>
     <li class="nav-item  {{ isCheckActiveRoute('admin.banner.index') }}">
         <a class="nav-link" href="{{ route('admin.banner.index') }}">
             <i class="far fa-images"></i>
