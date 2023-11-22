@@ -45,6 +45,11 @@
             <i class="far fa-images"></i>
             <span>Banner</span></a>
     </li>
+    <li class="nav-item  {{ isCheckActiveRoute('admin.address.index') }}">
+        <a class="nav-link" href="{{ route('admin.address.index') }}">
+            <i class="far fa-images"></i>
+            <span>Địa chỉ</span></a>
+    </li>
     <li class="nav-item  {{ isCheckActiveRoute('admin.site.index') }}">
         <a class="nav-link" href="{{ route('admin.site.index') }}">
             <i class="fas fa-tools"></i>

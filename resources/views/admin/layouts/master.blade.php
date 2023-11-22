@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,13 +23,14 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 </head>
+
 <body id="page-top">
     <div id="wrapper">
         @include('admin.components.sidebar')
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 @include('admin.components.topbar')
-                @yield('content')                
+                @yield('content')
             </div>
             @include('admin.components.footer')
         </div>
@@ -62,6 +64,7 @@
     {{-- <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script> --}}
     <script src="{{ asset('js/admin-custom.js') }}"></script>
+    @stack('scripts')
 </body>
 
 </html>

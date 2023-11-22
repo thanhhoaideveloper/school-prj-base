@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AddressController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
-use App\Http\Controllers\Admin\SlideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +38,16 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::controller(SiteSettingController::class)->prefix('site')->name('site.')->group(function () {
         Route::get('','index')->name('index');
         Route::post('/update', 'update')->name('update');
+    });
+
+    //address
+    Route::controller(AddressController::class)->prefix('address')->name('address.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::patch('/update/{id}', 'update')->name('update');
+        Route::get('/create','create')->name('create');
+        Route::delete('/delete/{id}','destroy')->name('delete');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/create','store')->name('store');
     });
 });
 
