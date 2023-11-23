@@ -38,6 +38,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     //site setting
     Route::controller(SiteSettingController::class)->prefix('site')->name('site.')->group(function () {
         Route::get('','index')->name('index');
+        Route::post('update', '')->name('update');
     });
 
     //core
