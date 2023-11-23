@@ -98,6 +98,19 @@ class BaseService
             }
             return $this->model->orderBy($field)->paginate($limit);
         }
-        return  $this->model->paginate($limit);
+        return $this->model->paginate($limit);
+    }
+    
+    /**
+     * where
+     *
+     * @param  mixed $operator
+     * @param  mixed $value
+     * @return Collection
+     */
+    public function where($operator, $value)
+    {
+        $result = $this->model->where($operator, $value);
+        return $result;
     }
 }

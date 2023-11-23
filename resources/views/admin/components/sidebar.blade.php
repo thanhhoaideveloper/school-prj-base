@@ -50,10 +50,20 @@
             <i class="far fa-images"></i>
             <span>Banner</span></a>
     </li>
+    <li class="nav-item  {{ isCheckActiveRoute('admin.address.index') }}">
+        <a class="nav-link" href="{{ route('admin.address.index') }}">
+            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+            <span>Địa chỉ</span></a>
+    </li>
+    <li class="nav-item  {{ isCheckActiveRoute('admin.studyprogram.index') }}">
+        <a class="nav-link" href="{{ route('admin.studyprogram.index') }}">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <span>Chương trình học</span></a>
+    </li>
     <li class="nav-item  {{ isCheckActiveRoute('admin.site.index') }}">
         <a class="nav-link" href="{{ route('admin.site.index') }}">
             <i class="fas fa-tools"></i>
-            <span>Cấu hình</span></a>
+            <span>Thông tin</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
