@@ -18,7 +18,6 @@ class AddressController extends Controller
     public function index()
     {
         $Addresss = $this->addressService->all();
-        logger($Addresss->first()->address);
         return view('admin.pages.address.index', compact('Addresss'));
     }
 
