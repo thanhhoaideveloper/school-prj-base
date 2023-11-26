@@ -445,7 +445,7 @@
     width: 250px;
     font-family: var(--body-regular-font-family);
     font-weight: var(--body-regular-font-weight);
-    color: var(--neutralneutral-8);
+    color: rgb(141 141 134);
     font-size: var(--body-regular-font-size);
     text-align: center;
     letter-spacing: var(--body-regular-letter-spacing);
@@ -1394,13 +1394,12 @@
 }
 
 .HOMEPAGE .frame-42 {
-    display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     position: fixed;
-    top: 806px;
-    left: 1351px;
+    bottom: 10px; 
+    right: 20px;
 }
 
 .HOMEPAGE .img-wrapper {
