@@ -4,18 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class UserStory extends Model
+class CoreValue extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $fillable = [
         'title',
-        'content',
-        'thumbnail',
         'description',
-        'create_by',
+        'thumbnail',
+        'orderBy',
         'status'
     ];
 }

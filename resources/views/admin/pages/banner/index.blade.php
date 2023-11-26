@@ -37,7 +37,7 @@
                         <td>
                             <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail" hidden/>
                             <div class="d-flex align-items-center justify-content-center upload-image" onclick="uploadImage(this)">
-                                @if($banner->thumbnail)
+                                @if($banner && $banner->thumbnail)
                                     <img height="100%" class="p-2" src="{{ asset($banner->thumbnail) }}" />
                                 @else
                                     <i class="fas fa-plus"></i>

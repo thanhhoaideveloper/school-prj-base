@@ -19,8 +19,8 @@ const closeModel = (id) => {
     $(`#${id}`).modal('hide');
 }
 
-const uploadImage = (element) => {
-    $('.input-upload-image').click();
+const uploadImage = (inputId) => {
+    $(`.${inputId}`).click();
 }
 
 const onChangeInputFile = (input) => {
