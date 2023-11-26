@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AddressController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CoreValueController;
@@ -69,6 +70,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::delete('/delete/{id}','destroy')->name('delete');
         Route::get('/edit/{id}','edit')->name('edit');
         Route::post('/create','store')->name('store');
+    });
+
+    //article
+    Route::controller(ArticleController::class)->prefix('article')->name('article.')->group(function () {
+        Route::get('','index')->name('index');
     });
 });
 
