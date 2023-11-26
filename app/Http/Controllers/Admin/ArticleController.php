@@ -17,4 +17,8 @@ class ArticleController extends Controller
         $viewModel['articles'] = $this->articleService->all();
         return view('admin.pages.article.index', $viewModel);
     }
+
+    public function create(){
+        return view('admin.pages.article.create');
+    }
 }

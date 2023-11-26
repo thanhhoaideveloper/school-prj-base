@@ -4,9 +4,8 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách bài viết</h6>
-                <a href="javascript:void(0)" 
+                <a href="{{ route('admin.article.create') }}" 
                     class="btn btn-primary btn-sm float-right" 
-                    id="btn-add" 
                     data-toggle="tooltip"
                     data-placement="bottom" title="Add study program">
                     <i class="fas fa-plus"></i> Thêm mới
@@ -39,6 +38,5 @@
             </div>
         </div>
     </div>
-    @include('admin.pages.article.create')
     @include('admin.pages.article.script')
 @endsection

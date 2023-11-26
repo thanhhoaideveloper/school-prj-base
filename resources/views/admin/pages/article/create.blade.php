@@ -1,35 +1,68 @@
-<div class="modal fade" id="createModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Thêm bài viết</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+@extends('admin.layouts.master')
+@section('content')
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary float-left">Thêm bài viết</h6>
             </div>
-            <div class="modal-body">
-                <form class="form-js">
+            <div class="card-body">
+                <form method="post" action="{{ route('admin.studyprogram.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label class="col-form-label">
+                        <label for="inputTitle" 
+                                class="col-form-label">
                             Tiêu đề
-                            <span class="text-danger">*</span>
                         </label>
-                        <input id="title" 
+                        <input id="inputTitle"
                                 type="text" 
-                                name="name" 
-                                placeholder="Enter title"
-                            value="{{ old('name') }}" class="form-control">
-                        @error('name')
+                                name="title" 
+                                placeholder="Nhập tiêu đề" 
+                                value="{{ old('title') }}"
+                            class="form-control">
+                        @error('title')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="d-flex justify-content-center align-items-center mt-2">
-                        <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">Hủy bỏ</button>
-                        <button type="button" class="btn btn-outline-primary w-25 ml-2 btn-loading btn-handle-create">Lưu</button>
+                    <div class="form-group">
+                        <label for="inputContent">Mô tả ngắn</label>
+                        <textarea class="form-control" name="content" id="inputContent" rows="3"></textarea>
+                        @error('content')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail" hidden/>
+                        <div class="d-flex align-items-center justify-content-center upload-image" onclick="uploadImage('input-upload-image')">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <span id="thumbnail-message" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDesc" class="col-form-label">
+                            Mô tả
+                        </label>
+                        <textarea class="form-control" 
+                                    id="description" 
+                                    rows="3"
+                                    name="description">{{ old('description') }}</textarea>
+                        @error('description')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="reset" class="btn btn-warning">Nhập lại</button>
+                        <button class="btn btn-success btn-loading" type="submit">Lưu</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
+    @include('admin.pages.article.script')
+    @push('scripts')
+        <script>
+            $('#description').summernote({
+                height: 300,
+            });
+        </script>   
+    @endpush
+@endsection

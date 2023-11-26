@@ -19,7 +19,6 @@ class Article extends Model
         'create_by',
         'update_by',
         'author_id',
-        'status'
     ];
 
 }

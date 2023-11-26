@@ -75,6 +75,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     //article
     Route::controller(ArticleController::class)->prefix('article')->name('article.')->group(function () {
         Route::get('','index')->name('index');
+        Route::get('create', 'create')->name('create');
     });
 });
 
