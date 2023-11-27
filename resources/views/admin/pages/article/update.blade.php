@@ -6,7 +6,7 @@
                 <h6 class="m-0 font-weight-bold text-primary float-left">Cập nhật bài viết</h6>
             </div>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.article.store') }}">
+                <form method="post" action="{{ route('admin.article.store') }}" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="id" value="{{ $article->id }}" hidden />
                     <div class="form-group">
@@ -37,7 +37,9 @@
                                 <i class="fas fa-plus"></i>
                             @endif
                         </div>
-                        <span id="thumbnail-message" class="text-danger"></span>
+                        @error('thumbnail')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="inputDesc" class="col-form-label">

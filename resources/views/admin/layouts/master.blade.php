@@ -28,6 +28,7 @@
     <!-- include summernote css/js -->
     <link href="{{ asset('vendor/summernote/summernote.min.css') }}" rel="stylesheet">
     <script src="{{ asset('vendor/summernote/summernote.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </head>
 
 <body id="page-top">

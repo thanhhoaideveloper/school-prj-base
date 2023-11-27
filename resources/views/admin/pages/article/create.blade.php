@@ -6,7 +6,7 @@
                 <h6 class="m-0 font-weight-bold text-primary float-left">Thêm bài viết</h6>
             </div>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.studyprogram.store') }}">
+                <form method="POST" action="{{ route('admin.article.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="inputTitle" class="col-form-label">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputContent">Mô tả ngắn</label>
-                        <textarea class="form-control" name="content" id="inputContent" rows="3"></textarea>
+                        <textarea class="form-control" name="content" id="inputContent" rows="3">{{ old('content') }}</textarea>
                         @error('content')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -32,7 +32,9 @@
                             onclick="uploadImage('input-upload-image')">
                             <i class="fas fa-plus"></i>
                         </div>
-                        <span id="thumbnail-message" class="text-danger"></span>
+                        @error('thumbnail')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="inputDesc" class="col-form-label">

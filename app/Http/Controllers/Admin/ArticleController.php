@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ArticleRequest;
 use App\Services\Admin\ArticleService;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
@@ -25,6 +27,16 @@ class ArticleController extends Controller
         return view('admin.pages.article.create');
     }
 
+    public function update($id){
+        $viewModel = [];
+        $viewModel['article'] = $this->articleService->find($id);
+        if(!$viewModel['article']){
+            return redirect()->back()->with('error',NOT_FOUND);
+        }
+
+        return view('admin.pages.article.update', $viewModel);
+    }
+
     public function store(ArticleRequest $request){
         try{
             DB::beginTransaction();
@@ -35,6 +47,11 @@ class ArticleController extends Controller
                                         $request->file('thumbnail'), 
                                         'banners'
                                     );
+            }
+
+            $user = Auth::user();
+            if($user){
+                $data['create_by'] = $user->full_name;
             }
 
             if($request->id){
@@ -48,5 +65,15 @@ class ArticleController extends Controller
             DB::rollBack();
             return redirect()->back()->with('error', $e->getMessage());
         }
+    }
+
+    public function delete($id){
+        $article = $this->articleService->find($id);
+        if(!$article){
+            return redirect()->back()->with('error', NOT_FOUND);
+        }
+
+        $this->articleService->delete($id);
+        return redirect()->route('admin.article.index')->with('success',DELETE_SUCCESS);
     }
 }

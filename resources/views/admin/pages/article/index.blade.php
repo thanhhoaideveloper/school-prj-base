@@ -17,18 +17,42 @@
                         <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>STT</th>
+                                    <th class="text-center">STT</th>
                                     <th>Tiêu đề</th>
                                     <th>Nội dung</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Mô tả</th>
                                     <th>Tác giả</th>
-                                    <th>Trạng thái</th>
-                                    <th>Thao tác</th>
+                                    <th class="text-center">Trạng thái</th>
+                                    <th class="text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                @foreach($articles as $key => $value)
+                                <tr>
+                                    <td class="text-center">{{ $key + 1 }}</td>
+                                    <td>{{ $value->title }}</td>
+                                    <td>{{ $value->content }}</td>
+                                    <td>{{ $value->create_by }}</td>
+                                    <td class="text-center">{{ $value->is_active_event }}</td>
+                                    <td class="d-flex align-items-center justify-content-center">
+                                        <a href="{{ route('admin.article.update', $value->id) }}"
+                                            class="btn btn-primary btn-sm float-left mr-1"
+                                            style="height:30px; width:30px;border-radius:50%" 
+                                            data-toggle="tooltip">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form method="POST" action="{{ route('admin.article.delete', $value->id) }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger btn-sm dltBtn" data-id={{ $value->id }}
+                                                style="height:30px; width:30px;border-radius:50%" 
+                                                data-toggle="tooltip"
+                                                data-placement="bottom" title="Delete">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     @else
