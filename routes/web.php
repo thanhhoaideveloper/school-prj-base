@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\StudyProgramController;
+use App\Http\Controllers\Admin\RatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,16 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     // study program
     Route::controller(StudyProgramController::class)->prefix('study-program')->name('studyprogram.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::patch('/update/{id}', 'update')->name('update');
+        Route::get('/create','create')->name('create');
+        Route::delete('/delete/{id}','destroy')->name('delete');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/create','store')->name('store');
+    });
+
+    // rating
+    Route::controller(RatingController::class)->prefix('rating')->name('rating.')->group(function () {
         Route::get('','index')->name('index');
         Route::patch('/update/{id}', 'update')->name('update');
         Route::get('/create','create')->name('create');
