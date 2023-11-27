@@ -36,6 +36,22 @@ $(document).on('click', '.btn-loading', function () {
 });
 
 $(document).ready(function(){
-
-
+    $('.dltBtn').click(function(e) {
+        var form = $(this).closest('form');
+        e.preventDefault();
+        swal({
+                title: "Bạn có chắc chắn không?",
+                text: "Khi bấm xoá, data không thể khôi phục!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    form.submit();
+                } else {
+                    swal("Đã hoàn tác!");
+                }
+            });
+    })
 });
