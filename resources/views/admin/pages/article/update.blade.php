@@ -3,24 +3,25 @@
     <div class="container-fluid">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary float-left">Thêm bài viết</h6>
+                <h6 class="m-0 font-weight-bold text-primary float-left">Cập nhật bài viết</h6>
             </div>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.studyprogram.store') }}">
+                <form method="post" action="{{ route('admin.article.store') }}">
                     @csrf
+                    <input type="text" name="id" value="{{ $article->id }}" hidden />
                     <div class="form-group">
                         <label for="inputTitle" class="col-form-label">
                             Tiêu đề
                         </label>
                         <input id="inputTitle" type="text" name="title" placeholder="Nhập tiêu đề"
-                            value="{{ old('title') }}" class="form-control">
+                            value="{{ $article->title ?? old('title') }}" class="form-control">
                         @error('title')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="inputContent">Mô tả ngắn</label>
-                        <textarea class="form-control" name="content" id="inputContent" rows="3"></textarea>
+                        <textarea class="form-control" name="content" id="inputContent" rows="3">{{ $article->content }}</textarea>
                         @error('content')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -30,7 +31,11 @@
                             hidden />
                         <div class="d-flex align-items-center justify-content-center upload-image"
                             onclick="uploadImage('input-upload-image')">
-                            <i class="fas fa-plus"></i>
+                            @if ($article->thumbnail)
+                                <img width="200px" src="{{ asset($article->thumbnail) }}" />
+                            @else
+                                <i class="fas fa-plus"></i>
+                            @endif
                         </div>
                         <span id="thumbnail-message" class="text-danger"></span>
                     </div>
@@ -38,7 +43,7 @@
                         <label for="inputDesc" class="col-form-label">
                             Mô tả
                         </label>
-                        <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+                        <textarea class="form-control" id="description" rows="3" name="description">{{ $article->description ?? old('description') }}</textarea>
                         @error('description')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
