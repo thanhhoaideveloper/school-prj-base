@@ -22,18 +22,18 @@
                         @foreach ($coreValue as $item)
                             <tr>
                                 <td class="align-middle">
-                                    <img class="w-100" src="{{ asset($item->thumbnail) }}" alt="Hinh anh"/>
+                                    <img class="w-100" src="{{ asset($item->thumbnail) }}" alt="Hinh anh" />
                                 </td>
                                 <td class="align-middle">{{ $item->title }}</td>
                                 <td class="align-middle">{{ $item->description }}</td>
                                 <td class="align-middle">
                                     <div class="d-flex">
-                                        <button type="button" data-id="{{ $item->id }}" class="btn btn-outline-primary w-50 editRow">
+                                        <button type="button" data-id="{{ $item->id }}"
+                                            class="btn btn-outline-primary w-50 editRow">
                                             <i class="fas fa-pen"></i>
                                             <span>Cập nhật</span>
                                         </button>
-                                        <a type="button" 
-                                            href="{{ route('admin.core.destroy', $item->id) }}"
+                                        <a type="button" href="{{ route('admin.core.destroy', $item->id) }}"
                                             class="btn btn-outline-danger w-50 ml-2">
                                             <i class="fas fa-trash-alt"></i>
                                             <span>Xoá</span>
@@ -48,7 +48,4 @@
             </div>
         </div>
     </div>
-    @include('admin.pages.core.create')
-    @include('admin.pages.core.update')
-    @include('admin.pages.core.script')
 @endsection

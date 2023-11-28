@@ -15,26 +15,25 @@
                             <tr>
                                 <td class="input-label">Tiêu đề: </td>
                                 <td class="input-form">
-                                    <input type="text" 
-                                            name="title" 
-                                            class="form-control form-control-lg"
-                                            value="{{ old('title') }}">
+                                    <input type="text" name="title" class="form-control form-control-lg"
+                                        value="{{ old('title') }}">
                                     <span id="title-message" class="text-danger"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="input-label">Mô tả: </td>
                                 <td>
-                                    <textarea class="form-control form-control-lg" 
-                                                name="description" rows="3">{{  old('description') }}</textarea>
+                                    <textarea class="form-control form-control-lg" name="description" rows="3">{{ old('description') }}</textarea>
                                     <span id="description-message" class="text-danger"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="input-label">Hình ảnh: </td>
                                 <td>
-                                    <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail" hidden/>
-                                    <div class="d-flex align-items-center justify-content-center upload-image" onclick="uploadImage('input-upload-image')">
+                                    <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)"
+                                        name="thumbnail" hidden />
+                                    <div class="d-flex align-items-center justify-content-center upload-image"
+                                        onclick="uploadImage('input-upload-image')">
                                         <i class="fas fa-plus"></i>
                                     </div>
                                     <span id="thumbnail-message" class="text-danger"></span>
@@ -44,7 +43,8 @@
                     </table>
                     <div class="d-flex justify-content-center align-items-center mt-2">
                         <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">Hủy bỏ</button>
-                        <button type="button" class="btn btn-outline-primary w-25 ml-2 btn-loading btn-handle-create">Lưu</button>
+                        <button type="button"
+                            class="btn btn-outline-primary w-25 ml-2 btn-loading btn-handle-create">Lưu</button>
                     </div>
                 </form>
             </div>
