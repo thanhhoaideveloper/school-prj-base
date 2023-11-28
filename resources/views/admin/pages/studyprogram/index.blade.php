@@ -1,87 +1,90 @@
 @extends('admin.layouts.master')
 @section('content')
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách chương trình học</h6>
-            <a href="{{ route('admin.studyprogram.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip"
-                data-placement="bottom" title="Add study program"><i class="fas fa-plus"></i> Thêm mới</a>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                @if ($studyPrograms->isNotEmpty())
-                    <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Tên</th>
-                                <th>Nội dung</th>
-                                <th>Số lượng</th>
-                                <th>Bắt đầu</th>
-                                <th>Kết thúc</th>
-                                <th>Trạng thái</th>
-                                <th>Ngày tạo</th>
-                                <th>Hình ảnh</th>
-                                <th>Thao tác</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>STT</th>
-                                <th>Tên</th>
-                                <th>Nội dung</th>
-                                <th>Số lượng</th>
-                                <th>Bắt đầu</th>
-                                <th>Kết thúc</th>
-                                <th>Trạng thái</th>
-                                <th>Ngày tạo</th>
-                                <th>Hình ảnh</th>
-                                <th>Thao tác</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            @foreach ($studyPrograms as $study)
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách chương trình học</h6>
+                <a href="{{ route('admin.studyprogram.create') }}" class="btn btn-primary btn-sm float-right"
+                    data-toggle="tooltip" data-placement="bottom" title="Add study program"><i class="fas fa-plus"></i> Thêm
+                    mới</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @if ($studyPrograms->isNotEmpty())
+                        <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
+                            <thead>
                                 <tr>
-                                    <td>{{ $study->id }}</td>
-                                    <td>{{ $study->name }}</td>
-                                    <td>{{ $study->description }}</td>
-                                    <td>{{ $study->student }}</td>
-                                    <td>{{ $study->start_time }}</td>
-                                    <td>{{ $study->end_time }}</td>
-                                    <td>
-                                        @if ($study->status == 1)
-                                            <span class="badge badge-success">{{ 'Mở' }}</span>
-                                        @else
-                                            <span class="badge badge-warning">{{ 'Đóng' }}</span>
-                                        @endif
-                                    </td>
-                                    <td>{{ $study->created_at }}</td>
-                                    <td>
-                                        @if ($study->image)
-                                            <img src="{{ $study->image }}" class="img-fluid zoom" style="max-width:80px"
-                                                alt="{{ $study->name }}">
-                                        @else
-                                            <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"
-                                                class="img-fluid zoom" style="max-width:100%" alt="avatar.png">
-                                        @endif
-                                    </td>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Nội dung</th>
+                                    <th>Số lượng</th>
+                                    <th>Bắt đầu</th>
+                                    <th>Kết thúc</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Nội dung</th>
+                                    <th>Số lượng</th>
+                                    <th>Bắt đầu</th>
+                                    <th>Kết thúc</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                @foreach ($studyPrograms as $study)
+                                    <tr>
+                                        <td>{{ $study->id }}</td>
+                                        <td>{{ $study->name }}</td>
+                                        <td>{{ $study->description }}</td>
+                                        <td>{{ $study->student }}</td>
+                                        <td>{{ $study->start_time }}</td>
+                                        <td>{{ $study->end_time }}</td>
+                                        <td>
+                                            @if ($study->status == 1)
+                                                <span class="badge badge-success">{{ 'Mở' }}</span>
+                                            @else
+                                                <span class="badge badge-warning">{{ 'Đóng' }}</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $study->created_at }}</td>
+                                        <td>
+                                            @if ($study->image)
+                                                <img src="{{ $study->image }}" class="img-fluid zoom"
+                                                    style="max-width:80px" alt="{{ $study->name }}">
+                                            @else
+                                                <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"
+                                                    class="img-fluid zoom" style="max-width:100%" alt="avatar.png">
+                                            @endif
+                                        </td>
 
-                                    <td>
-                                        <a href="{{ route('admin.studyprogram.edit', $study->id) }}"
-                                            class="btn btn-primary btn-sm float-left mr-1"
-                                            style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
-                                            title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                                        <form method="POST" action="{{ route('admin.studyprogram.delete', $study->id) }}">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger btn-sm dltBtn" data-id={{ $study->id }}
+                                        <td>
+                                            <a href="{{ route('admin.studyprogram.edit', $study->id) }}"
+                                                class="btn btn-primary btn-sm float-left mr-1"
                                                 style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
-                                                data-placement="bottom" title="Delete"><i
-                                                    class="fas fa-trash-alt"></i></button>
-                                        </form>
-                                    </td>
-                                    {{-- Delete Modal --}}
-                                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
+                                                title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                                            <form method="POST"
+                                                action="{{ route('admin.studyprogram.delete', $study->id) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger btn-sm dltBtn" data-id={{ $study->id }}
+                                                    style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
+                                                    data-placement="bottom" title="Delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                        {{-- Delete Modal --}}
+                                        {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -100,13 +103,14 @@
                           </div>
                         </div>
                     </div> --}}
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                @else
-                    <h6 class="text-center">Vui lòng thêm chương trình học!</h6>
-                @endif
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <h6 class="text-center">Vui lòng thêm chương trình học!</h6>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
