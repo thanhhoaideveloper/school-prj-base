@@ -33,7 +33,7 @@ class RatingController extends Controller
             'avatar' => 'required',
             'comment' => 'required',
             'class' => 'required',
-            'score' => 'nullable'
+            'score' => 'required|numeric'
         ]);
 
         $this->ratingService->save($validatedData);
@@ -48,9 +48,15 @@ class RatingController extends Controller
         return view('admin.pages.rating.edit', compact('rating'));
     }
 
-    public function update(RatingRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->validated();
+        $data = $request->validate([
+            'name' => 'required',
+            'avatar' => 'required',
+            'comment' => 'required',
+            'class' => 'required',
+            'score' => 'required|numeric'
+        ]);
         $this->ratingService->update($data, $id);
 
         return redirect()->route('admin.rating.index')
