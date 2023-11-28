@@ -24,18 +24,9 @@
                                     <th>Tên</th>
                                     <th>Địa chỉ</th>
                                     <th>Mã bản đồ</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 8%;">Thao tác</th>
                                 </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Tên</th>
-                                    <th>Địa chỉ</th>
-                                    <th>Mã bản đồ</th>
-                                    <th>Thao tác</th>
-                                </tr>
-                            </tfoot>
+                            </thead>                          
                             <tbody>
 
                                 @foreach ($Addresss as $address)

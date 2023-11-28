@@ -26,7 +26,7 @@
                                     <th>Đánh giá</th>
                                     <th>Điểm đánh giá</th>
                                     <th>Lớp</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 8%;">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>

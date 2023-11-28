@@ -22,7 +22,7 @@
                                     <th>Nội dung</th>
                                     <th>Tác giả</th>
                                     <th class="text-center">Trạng thái</th>
-                                    <th class="text-center">Thao tác</th>
+                                    <th style="width: 8%;">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
