@@ -11,15 +11,15 @@ const AUTHENTICATE_ERROR = "Tài khoản hoặc mật khẩu không đúng";
 const SITE_NOT_FOUND = "Site của bạn chưa khởi tạo";
 
 //success, error
-const UPDATE_SUCCESS = "Cập nhật thành công";
-const SAVE_SUCCESS = "Lưu thành công";
+const UPDATE_SUCCESS = "Cập nhật dữ liệu thành công";
+const SAVE_SUCCESS = "Lưu dữ liệu thành công";
 const NOT_FOUND = "Không tìm thấy dữ liệu";
-const DELETE_ERROR = "Xóa không thành công";
-const DELETE_SUCCESS = "Xóa thành công";
+const DELETE_ERROR = "Xóa dữ liệu không thành công";
+const DELETE_SUCCESS = "Xóa dữ liệu thành công";
 
 //title, description default
-const TITLE = "Thiết kế website chuyên nghiệp";
-const DESCRIPTION = "Cung cấp dịch vụ thiết kế website hướng đế xu thế chung và tạo thương hiệu cho doanh nghiệp";
+const TITLE = "Trang quản lý trường học";
+const DESCRIPTION = "Dịch vụ thiết kế website chuyên nghiệp - contact: hovietlong234@gmail.com";
 
 
 
@@ -42,8 +42,9 @@ if (!function_exists('getConfig')) {
     }
 }
 
-if(!function_exists('isCheckAtiveRoute')){
-    function isCheckActiveRoute($route){
+if (!function_exists('isCheckAtiveRoute')) {
+    function isCheckActiveRoute($route)
+    {
         $currentRoute = Route::currentRouteName();
         return $route == $currentRoute ? 'active' : '';
     }

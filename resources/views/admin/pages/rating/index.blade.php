@@ -28,24 +28,22 @@
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ tên</th>
-                                <th>Ảnh đại diện</th>
-                                <th>Đánh giá</th>
-                                <th>Điểm đánh giá</th>
-                                <th>Lớp</th>
-                                <th>Thao tác</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
 
                             @foreach ($rating as $rating)
                                 <tr>
                                     <td>{{ $rating->id }}</td>
                                     <td>{{ $rating->name }}</td>
-                                    <td><img height="100%" class="p-2" src="{{ asset($rating->avatar) }}" /></td>
+                                    <td>
+                                        @if ($rating->avatar)
+                                            <img src="{{ $rating->avatar }}" class="img-fluid zoom" style="max-width:80px"
+                                                alt="{{ $rating->avatar }}">
+                                        @else
+                                            <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"
+                                                class="img-fluid zoom" style="max-width:100%" alt="avatar.png">
+                                        @endif
+                                    </td>
+                                    {{-- <td><img height="100%" class="p-2" src="{{ asset($rating->avatar) }}" /></td> --}}
                                     <td>{{ $rating->comment }}</td>
                                     <td>{{ $rating->score }}</td>
                                     <td>{{ $rating->class }}</td>

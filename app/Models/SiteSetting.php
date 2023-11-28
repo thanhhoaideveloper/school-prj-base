@@ -14,6 +14,9 @@ class SiteSetting extends Model
         'title',
         'description',
         'logo',
-        'favicon'
+        'favicon',
+        'footer_logo',
+        'email',
+        'phone'
     ];
 }
