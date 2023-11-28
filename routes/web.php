@@ -35,7 +35,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     //banner
     Route::controller(BannerController::class)->prefix('banner')->name('banner.')->group(function () {
         Route::get('','index')->name('index');
-        Route::post('save', 'save')->name('save');
+        Route::patch('/update/{id}', 'update')->name('update');
+        Route::get('/create','create')->name('create');
+        Route::delete('/delete/{id}','destroy')->name('delete');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/create','store')->name('store');
     });
 
     //site setting
