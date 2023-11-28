@@ -17,12 +17,18 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin-custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('backend/summernote/summernote.min.css') }}">
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@flasher/flasher@1.2.4/dist/flasher.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@flasher/flasher@1.2.4/dist/flasher.min.js"></script>i
+    <script src="{{ asset('backend/summernote/summernote.min.js') }}"></script>
+    <!-- include summernote css/js -->
+    <link href="{{ asset('vendor/summernote/summernote.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('vendor/summernote/summernote.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     @stack('styles')
 </head>
 

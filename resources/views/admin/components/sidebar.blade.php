@@ -22,6 +22,19 @@
     </div>
     <!-- Divider -->
     <hr class="sidebar-divider">
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+            aria-expanded="true" aria-controls="collapsePages">
+            <i class="far fa-newspaper"></i>
+            <span>Bài viết</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{ isCheckActiveRoute('admin.article.index') }}" href="{{ route('admin.article.index') }}">Danh sách bài viết</a>
+                <a class="collapse-item" href="register.html">Thêm bài viết</a>
+            </div>
+        </div>
+    </li>
     <li class="nav-item  {{ isCheckActiveRoute('admin.core.index') }}">
         <a class="nav-link" href="{{ route('admin.core.index') }}">
             <i class="fas fa-hand-holding-usd"></i>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AddressController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CoreValueController;
@@ -72,6 +73,15 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::post('/create','store')->name('store');
     });
 
+    //article
+    Route::controller(ArticleController::class)->prefix('article')->name('article.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::get('update/{id}', 'update')->name('update');
+        Route::post('store', 'store')->name('store');
+        Route::delete('delete/{id}', 'delete')->name('delete'); 
+    });
+    
     // rating
     Route::controller(RatingController::class)->prefix('rating')->name('rating.')->group(function () {
         Route::get('','index')->name('index');
