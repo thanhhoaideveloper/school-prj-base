@@ -135,7 +135,6 @@
     <!-- Page level plugins -->
     <script src="{{ asset('backend/vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('backend/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('backend/js/demo/datatables-demo.js') }}"></script>
@@ -146,12 +145,6 @@
                 "targets": [3, 4, 5]
             }]
         });
-
-        // Sweet alert
-
-        function deleteData(id) {
-
-        }
     </script>
     <script>
         $(document).ready(function() {
@@ -166,8 +159,8 @@
                 // alert(dataID);
                 e.preventDefault();
                 swal({
-                        title: "Are you sure?",
-                        text: "Once deleted, you will not be able to recover this data!",
+                        title: "Bạn có chắc chắn không?",
+                        text: "Khi bấm xoá, data không thể khôi phục!",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -176,7 +169,7 @@
                         if (willDelete) {
                             form.submit();
                         } else {
-                            swal("Your data is safe!");
+                            swal("Đã hoàn tác!");
                         }
                     });
             })

@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\AddressController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CoreValueController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\StudyProgramController;
+use App\Http\Controllers\Admin\RatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +41,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     //site setting
     Route::controller(SiteSettingController::class)->prefix('site')->name('site.')->group(function () {
         Route::get('','index')->name('index');
-        Route::post('update', '')->name('update');
+        Route::post('update', 'update')->name('update');
     });
 
     //core
@@ -63,6 +65,25 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 
     // study program
     Route::controller(StudyProgramController::class)->prefix('study-program')->name('studyprogram.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::patch('/update/{id}', 'update')->name('update');
+        Route::get('/create','create')->name('create');
+        Route::delete('/delete/{id}','destroy')->name('delete');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/create','store')->name('store');
+    });
+
+    //article
+    Route::controller(ArticleController::class)->prefix('article')->name('article.')->group(function () {
+        Route::get('','index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::get('update/{id}', 'update')->name('update');
+        Route::post('store', 'store')->name('store');
+        Route::delete('delete/{id}', 'delete')->name('delete'); 
+    });
+    
+    // rating
+    Route::controller(RatingController::class)->prefix('rating')->name('rating.')->group(function () {
         Route::get('','index')->name('index');
         Route::patch('/update/{id}', 'update')->name('update');
         Route::get('/create','create')->name('create');

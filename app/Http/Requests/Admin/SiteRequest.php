@@ -24,18 +24,17 @@ class SiteRequest extends FormRequest
     public function rules()
     {
         return [
-            'logo' => [
-                'image',
-                'mimes:jpeg,png',
-                'mimetypes:image/jpeg,image/png',
-            ],
+            'logo' => 'required',
             'favicon' => [
                 'image',
                 'mimes:jpeg,png',
                 'mimetypes:image/jpeg,image/png',
             ],
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'footer_logo' => 'required',
         ];
     }
 }
