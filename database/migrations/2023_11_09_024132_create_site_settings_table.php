@@ -19,6 +19,9 @@ class CreateSiteSettingsTable extends Migration
             $table->text('description')->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
+            $table->string('footer_logo')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }
