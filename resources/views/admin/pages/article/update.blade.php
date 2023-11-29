@@ -50,6 +50,18 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="is_active_event" class="col-form-label">Loại bài viết <span
+                                class="text-danger">*</span></label>
+                        <select name="is_active_event" class="form-control">
+                            <option value="1" {{ $article->is_active_event == '1' ? 'selected' : null}}>Sự kiện sắp diễn ra</option>
+                            <option value="0" {{ $article->is_active_event == '0' ? 'selected' : null}}>Bài viết</option>
+                        </select>
+                        @error('is_active_event')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                     <div class="form-group mb-3">
                         <button type="reset" class="btn btn-warning">Nhập lại</button>
                         <button class="btn btn-success btn-loading" type="submit">Lưu</button>
@@ -58,8 +70,7 @@
             </div>
         </div>
     </div>
-    @include('admin.pages.article.script')
-    @push('scripts')
+    = @push('scripts')
         <script>
             $('#description').summernote({
                 height: 300,

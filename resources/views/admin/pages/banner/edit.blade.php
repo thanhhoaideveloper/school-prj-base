@@ -3,55 +3,55 @@
 @section('content')
     <div class="container-fluid">
         <div class="card">
-            <h5 class="card-header">Chỉnh sửa địa chỉ</h5>
+            <h5 class="card-header">Chỉnh sửa banner</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.rating.update', $rating->id) }}">
+                <form method="post" action="{{ route('admin.banner.update', $banner->id) }}">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
-                        <label for="inputTitle" class="col-form-label">Tên khách hàng <span
-                                class="text-danger">*</span></label>
-                        <input id="inputTitle" type="text" name="name" placeholder="Enter title"
-                            value="{{ $rating->name }}" class="form-control">
-                        @error('name')
+                        <label for="title" class="col-form-label">Tiêu đề <span class="text-danger">*</span></label>
+                        <input id="title" type="text" name="title" placeholder="Nhập tiêu đề"
+                            value="{{ $banner->title }}" class="form-control">
+                        @error('title')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="avatar" class="col-form-label">Ảnh đại diện <span class="text-danger">*</span></label>
-                        <x-upload-image inputName='avatar' inputTitle='' divPreviewId="upload_logo"
-                            defaultImage="{{ $rating->avatar ?? null }}" />
-                        @error('avatar')
+                        <label for="content" class="col-form-label">Nội dung <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="content" name="content">{{ $banner->content }}</textarea>
+                        @error('content')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="comment" class="col-form-label">Nội dung đánh giá <span
-                                class="text-danger">*</span></label>
-                        <textarea class="form-control" id="comment" name="comment">{{ $rating->comment }}</textarea>
-                        @error('comment')
+                        <label for="link" class="col-form-label">Đường dẫn </label>
+                        <textarea class="form-control" id="link" name="link">{{ $banner->link }}</textarea>
+                        @error('link')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="class" class="col-form-label">Tên lớp học <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="class" name="class">{{ $rating->class }}</textarea>
-                        @error('class')
+                        <label for="thumbnail" class="col-form-label">Media </label>
+                        <textarea class="form-control" id="thumbnail" name="thumbnail">{{ $banner->thumbnail }}</textarea>
+                        @error('thumbnail')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="score" class="col-form-label">Điểm đánh giá <span
-                                class="text-danger">*</span></label>
-                        <textarea class="form-control" id="score" name="score">{{ $rating->score }}</textarea>
-                        @error('score')
+                        <label for="status" class="col-form-label">Trạng thái <span class="text-danger">*</span></label>
+                        <select name="status" class="form-control">
+                            <option value="1">Banner Chính</option>
+                            <option value="0" selected>Banner Phụ</option>
+                        </select>
+                        @error('status')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
 
                     <div class="form-group mb-3">
                         <button class="btn btn-success" type="submit">Cập nhật</button>

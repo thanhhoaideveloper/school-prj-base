@@ -2,69 +2,63 @@
 
 @section('content')
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="row">
-            <div class="col-md-12">
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="row">
+                <div class="col-md-12">
 
+                </div>
             </div>
-        </div>
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách địa chỉ</h6>
-            <a href="{{ route('admin.address.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip"
-                data-placement="bottom" title="Thêm địa chỉ"><i class="fas fa-plus"></i> Thêm địa chỉ</a>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                @if (count($Addresss) > 0)
-                    <table class="table table-bordered" id="product-dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Tên</th>
-                                <th>Địa chỉ</th>
-                                <th>Mã bản đồ</th>
-                                <th>Thao tác</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>STT</th>
-                                <th>Tên</th>
-                                <th>Địa chỉ</th>
-                                <th>Mã bản đồ</th>
-                                <th>Thao tác</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-
-                            @foreach ($Addresss as $address)
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách địa chỉ</h6>
+                <a href="{{ route('admin.address.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip"
+                    data-placement="bottom" title="Thêm địa chỉ"><i class="fas fa-plus"></i> Thêm địa chỉ</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @if (count($Addresss) > 0)
+                        <table class="table table-bordered" id="product-dataTable" width="100%" cellspacing="0">
+                            <thead>
                                 <tr>
-                                    <td>{{ $address->id }}</td>
-                                    <td>{{ $address->name }}</td>
-                                    <td>{{ $address->address }}</td>
-                                    <td>{{ $address->map }}</td>
-
-                                    <td>
-                                        <a href="{{ route('admin.address.edit', $address->id) }}"
-                                            class="btn btn-primary btn-sm float-left mr-1"
-                                            style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
-                                            title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                                        <form method="POST" action="{{ route('admin.address.delete', [$address->id]) }}">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger btn-sm dltBtn" data-id={{ $address->id }}
-                                                style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
-                                                data-placement="bottom" title="Delete"><i
-                                                    class="fas fa-trash-alt"></i></button>
-                                        </form>
-                                    </td>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Mã bản đồ</th>
+                                    <th style="width: 8%;">Thao tác</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                @else
-                    <h6 class="text-center">Không có địa chỉ, vui lòng thêm mới!</h6>
-                @endif
+                            </thead>                          
+                            <tbody>
+
+                                @foreach ($Addresss as $address)
+                                    <tr>
+                                        <td>{{ $address->id }}</td>
+                                        <td>{{ $address->name }}</td>
+                                        <td>{{ $address->address }}</td>
+                                        <td>{{ $address->map }}</td>
+
+                                        <td>
+                                            <a href="{{ route('admin.address.edit', $address->id) }}"
+                                                class="btn btn-primary btn-sm float-left mr-1"
+                                                style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
+                                                title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                                            <form method="POST"
+                                                action="{{ route('admin.address.delete', [$address->id]) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger btn-sm dltBtn" data-id={{ $address->id }}
+                                                    style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip"
+                                                    data-placement="bottom" title="Delete"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <h6 class="text-center">Không có địa chỉ, vui lòng thêm mới!</h6>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

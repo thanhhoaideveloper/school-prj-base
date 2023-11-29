@@ -5,12 +5,13 @@
         <div class="card">
             <h5 class="card-header">Thêm giá trị cốt lõi</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.core.create') }}">
-                    {{ csrf_field() }}
+                <form method="post" action="{{ route('admin.core.update', $coreValue->id) }}">
+                    @csrf
+                    @method('PATCH')
                     <div class="form-group">
                         <label for="title" class="col-form-label">Tiêu đề <span class="text-danger">*</span></label>
                         <input id="title" type="text" name="title" placeholder="Enter title"
-                            value="{{ old('title') }}" class="form-control">
+                            value="{{ $coreValue->title }}" class="form-control">
                         @error('title')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -18,7 +19,7 @@
 
                     <div class="form-group">
                         <label for="description" class="col-form-label">Mô tả <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
+                        <textarea class="form-control" id="description" name="description">{{ $coreValue->description }}</textarea>
                         @error('description')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -33,7 +34,7 @@
                                 </a>
                             </span>
                             <input id="thumbnail" class="form-control" type="text" name="thumbnail"
-                                value="{{ old('thumbnail') }}">
+                                value="{{ $coreValue->thumbnail }}">
                         </div>
                         <div id="thumbnail" style="margin-top:15px;max-height:500px;"></div>
                         @error('thumbnail')
@@ -61,8 +62,8 @@
     <script src="{{ asset('backend/summernote/summernote.min.js') }}"></script>
     <script>
         $('#description').summernote({
-                height: 300,
-            });
+            height: 300,
+        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 @endpush

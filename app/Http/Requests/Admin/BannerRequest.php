@@ -24,14 +24,16 @@ class BannerRequest extends FormRequest
     public function rules()
     {
         return [
-            'thumbnail' => [
-                'image',
-                'mimes:png,jpg,jpeg,gif',
-                'mimetypes:image/jpeg,image/png,image/gif'
-            ],
+            // 'thumbnail' => [
+            //     'image',
+            //     'mimes:png,jpg,jpeg,gif',
+            //     'mimetypes:image/jpeg,image/png,image/gif'
+            // ],
+            'thumbnail' => 'required',
             'title' => 'required',
-            'link' => '',
-            'content' => 'required'
+            'link' => 'nullable',
+            'content' => 'required',
+            'status' => ''
         ];
     }
 }

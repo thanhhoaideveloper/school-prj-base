@@ -30,8 +30,9 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ isCheckActiveRoute('admin.article.index') }}" href="{{ route('admin.article.index') }}">Danh sách bài viết</a>
-                <a class="collapse-item" href="register.html">Thêm bài viết</a>
+                <a class="collapse-item {{ isCheckActiveRoute('admin.article.index') }}"
+                    href="{{ route('admin.article.index') }}">Danh sách bài viết</a>
+                <a class="collapse-item" href="{{ route('admin.article.create') }}">Thêm bài viết</a>
             </div>
         </div>
     </li>
