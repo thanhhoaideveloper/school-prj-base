@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\StudyProgramController;
 use App\Http\Controllers\Admin\RatingController;
+use App\Http\Controllers\Home\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +23,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user-interface.home-page.index');
+Route::controller(HomePageController::class)->group(function () {
+    Route::get("/", 'index')->name('home');
 });
 
 
