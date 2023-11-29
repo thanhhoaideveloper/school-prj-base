@@ -22,7 +22,7 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@flasher/flasher@1.2.4/dist/flasher.min.js"></script>i
+    <script defer src="https://cdn.jsdelivr.net/npm/@flasher/flasher@1.2.4/dist/flasher.min.js"></script>
     <!-- include summernote css/js -->
     <link href="{{ asset('vendor/summernote/summernote.min.css') }}" rel="stylesheet">
     <script src="{{ asset('vendor/summernote/summernote.min.js') }}"></script>
