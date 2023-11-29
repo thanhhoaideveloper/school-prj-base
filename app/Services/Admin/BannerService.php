@@ -13,4 +13,8 @@ class BannerService extends BaseService
     {
         $this->model = $banner;
     }
+
+    public function getMainBanner(){
+        return $this->model->where("status", 1)->first();
+    }
 }
