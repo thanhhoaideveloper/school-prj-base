@@ -24,14 +24,15 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required',
-            'content'=>'required',
+            'title' => 'required',
+            'content' => 'required',
             'thumbnail' => [
                 'image',
                 'mimes:png,jpg,jpeg,gif',
                 'mimetypes:image/jpeg,image/png,image/gif'
             ],
-            'description'=>'required'
+            'description' => 'required',
+            'is_active_event' => 'required',
         ];
     }
 }

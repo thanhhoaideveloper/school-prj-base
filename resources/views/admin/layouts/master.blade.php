@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="$configs['description'] ?? DESCRIPTION }}">
-    <meta name="author" content="">
+    <meta name="description" content="{{ $configs['description'] ?? DESCRIPTION }}">
+    <meta name="author" content="Dịch vụ thiết kế web - hovietlong234@gmail.com">
     <title>{{ $configs['title'] ?? TITLE }}</title>
     <link rel="shortcut icon" href="{{ asset($configs['favicon'] ?? '') }}">
     <!-- Custom fonts for this template-->
@@ -17,14 +17,12 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin-custom.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('backend/summernote/summernote.min.css') }}">
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@flasher/flasher@1.2.4/dist/flasher.min.js"></script>i
-    <script src="{{ asset('backend/summernote/summernote.min.js') }}"></script>
     <!-- include summernote css/js -->
     <link href="{{ asset('vendor/summernote/summernote.min.css') }}" rel="stylesheet">
     <script src="{{ asset('vendor/summernote/summernote.min.js') }}"></script>
