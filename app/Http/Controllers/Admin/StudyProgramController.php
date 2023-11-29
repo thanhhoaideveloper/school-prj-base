@@ -33,7 +33,6 @@ class StudyProgramController extends Controller
     public function store(Request $request)
     {
 
-        $request['status'] = 1;
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
