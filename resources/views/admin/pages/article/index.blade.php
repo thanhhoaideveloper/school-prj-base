@@ -33,7 +33,7 @@
                                         <td>{{ $value->create_by }}</td>
                                         <td>
                                             @if ($value->thumbnail)
-                                                <img src="{{ $value->thumbnail }}" class="img-fluid zoom"
+                                                <img src="{{ asset($value->thumbnail) }}" class="img-fluid zoom"
                                                     style="max-width:80px" alt="{{ $value->title }}">
                                             @else
                                                 <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"
@@ -47,7 +47,7 @@
                                                 <span class="badge badge-secondary">{{ 'Bài viết' }}</span>
                                             @endif
                                         </td>
-                                        <td class="d-flex align-items-center justify-content-center">
+                                        <td class="align-items-center justify-content-center">
                                             <a href="{{ route('admin.article.update', $value->id) }}"
                                                 class="btn btn-primary btn-sm float-left mr-1"
                                                 style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip">

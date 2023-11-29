@@ -31,7 +31,7 @@
                                 </a>
                             </span>
                             <input id="thumbnail" class="form-control" type="text" name="logo"
-                                value="{{ $site->logo }}">
+                                value="{{ $site->logo ?? "" }}">
                         </div>
                         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
 

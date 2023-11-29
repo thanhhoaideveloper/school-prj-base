@@ -46,13 +46,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="status" class="col-form-label">Loại bài viết <span
+                        <label for="is_active_event" class="col-form-label">Loại bài viết <span
                                 class="text-danger">*</span></label>
-                        <select name="status" class="form-control">
+                        <select name="is_active_event" class="form-control">
                             <option value="1">Sự kiện sắp diễn ra</option>
                             <option value="0" selected>Bài viết</option>
                         </select>
-                        @error('status')
+                        @error('is_active_event')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
