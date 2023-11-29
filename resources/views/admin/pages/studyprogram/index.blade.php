@@ -46,7 +46,7 @@
                                         <td>{{ $study->created_at }}</td>
                                         <td>
                                             @if ($study->image)
-                                                <img src="{{ $study->image }}" class="img-fluid zoom"
+                                                <img src="{{ asset($study->image) }}" class="img-fluid zoom"
                                                     style="max-width:80px" alt="{{ $study->name }}">
                                             @else
                                                 <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"

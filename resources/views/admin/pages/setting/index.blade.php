@@ -4,7 +4,7 @@
         <div class="card">
             <h5 class="card-header">Cài đặt trang web</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.site.update') }}">
+                <form method="post" action="{{ route('admin.site.update') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="title" class="col-form-label">Tiêu đề <span class="text-danger">*</span></label>
@@ -23,38 +23,32 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPhoto" class="col-form-label">Logo <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                </a>
-                            </span>
-                            <input id="thumbnail" class="form-control" type="text" name="logo"
-                                value="{{ $site->logo ?? "" }}">
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="logo"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image')">
+                            @if ($site && $site->logo)
+                                <img width="200px" src="{{ asset($site->logo) }}" />
+                            @else
+                                <i class="fas fa-plus"></i>
+                            @endif
                         </div>
-                        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
-
-                        @error('logo')
+                        @error('image')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-
                     <div class="form-group">
-                        <label for="inputPhoto" class="col-form-label">Footer Logo <span
-                                class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                </a>
-                            </span>
-                            <input id="thumbnail" class="form-control" type="text" name="footer_logo"
-                                value="{{ $site->footer_logo ?? null }}">
+                        <input type="file" class="input-upload-image-footer" onchange="onChangeInputFile(this)" name="footer_logo"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image-footer')">
+                            @if ($site && $site->footer_logo)
+                                <img width="200px" src="{{ asset($site->footer_logo) }}" />
+                            @else
+                                <i class="fas fa-plus"></i>
+                            @endif
                         </div>
-                        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
-
-                        @error('logo')
+                        @error('image')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

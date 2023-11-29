@@ -5,7 +5,7 @@
         <div class="card">
             <h5 class="card-header">Chỉnh sửa banner</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.banner.update', $banner->id) }}">
+                <form method="post" action="{{ route('admin.banner.update', $banner->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -34,8 +34,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="thumbnail" class="col-form-label">Media </label>
-                        <textarea class="form-control" id="thumbnail" name="thumbnail">{{ $banner->thumbnail }}</textarea>
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image')">
+                            @if ($banner->thumbnail)
+                                <img width="200px" src="{{ asset($banner->thumbnail) }}" />
+                            @else
+                                <i class="fas fa-plus"></i>
+                            @endif
+                        </div>
                         @error('thumbnail')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

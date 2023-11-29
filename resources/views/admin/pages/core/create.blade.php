@@ -5,7 +5,7 @@
         <div class="card">
             <h5 class="card-header">Thêm giá trị cốt lõi</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.core.create') }}">
+                <form method="post" action="{{ route('admin.core.create') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="title" class="col-form-label">Tiêu đề <span class="text-danger">*</span></label>
@@ -25,17 +25,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPhoto" class="col-form-label">Hình ảnh <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                </a>
-                            </span>
-                            <input id="thumbnail" class="form-control" type="text" name="thumbnail"
-                                value="{{ old('thumbnail') }}">
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image')">
+                            <i class="fas fa-plus"></i>
                         </div>
-                        <div id="thumbnail" style="margin-top:15px;max-height:500px;"></div>
                         @error('thumbnail')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

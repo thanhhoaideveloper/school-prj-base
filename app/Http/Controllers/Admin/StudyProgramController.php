@@ -32,8 +32,6 @@ class StudyProgramController extends Controller
 
     public function store(Request $request)
     {
-
-        $request['status'] = 1;
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -43,6 +41,13 @@ class StudyProgramController extends Controller
             'end_time' => 'nullable|date',
             'status' => 'required'
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = storeImage(
+                $request->file('image'),
+                'studyprograms'
+            );
+        }
 
         $this->studyProgramService->save($validatedData);
 
@@ -67,6 +72,13 @@ class StudyProgramController extends Controller
             'end_time' => 'nullable|date',
             'status' => 'required'
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = storeImage(
+                $request->file('image'),
+                'studyprograms'
+            );
+        }
 
         $this->studyProgramService->update($validatedData, $id);
 
