@@ -33,7 +33,7 @@
                                         <td>{{ $banner->link }}</td>
                                         <td>
                                             @if ($banner->thumbnail)
-                                                <img src="{{ $banner->thumbnail }}" class="img-fluid zoom"
+                                                <img src="{{ asset($banner->thumbnail) }}" class="img-fluid zoom"
                                                     style="max-width:80px" alt="{{ $banner->title }}">
                                             @else
                                                 <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"

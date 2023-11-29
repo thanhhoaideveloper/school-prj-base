@@ -44,6 +44,13 @@ class StudyProgramController extends Controller
             'status' => 'required'
         ]);
 
+        if ($request->file('image')) {
+            $validatedData['image'] = storeImage(
+                $request->file('image'),
+                'studyprograms'
+            );
+        }
+
         $this->studyProgramService->save($validatedData);
 
         return redirect()->route('admin.studyprogram.index')
@@ -67,6 +74,13 @@ class StudyProgramController extends Controller
             'end_time' => 'nullable|date',
             'status' => 'required'
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = storeImage(
+                $request->file('image'),
+                'studyprograms'
+            );
+        }
 
         $this->studyProgramService->update($validatedData, $id);
 

@@ -5,11 +5,11 @@
         <div class="card">
             <h5 class="card-header">Thêm chương trình học</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.studyprogram.store') }}">
+                <form method="post" action="{{ route('admin.studyprogram.store') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="inputTitle" class="col-form-label">Tên <span class="text-danger">*</span></label>
-                        <input id="inputTitle" type="text" name="name" placeholder="Enter name"
+                        <input id="inputTitle" type="text" name="name"
                             value="{{ old('name') }}" class="form-control">
                         @error('name')
                             <span class="text-danger">{{ $message }}</span>
@@ -49,17 +49,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPhoto" class="col-form-label">Hình ảnh <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                    <i class="fa fa-picture-o"></i> Choose
-                                </a>
-                            </span>
-                            <input id="thumbnail" class="form-control" type="text" name="image"
-                                value="{{ old('image') }}">
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="image"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image')">
+                            <i class="fas fa-plus"></i>
                         </div>
-                        <div id="image" style="margin-top:15px;max-height:500px;"></div>
                         @error('image')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

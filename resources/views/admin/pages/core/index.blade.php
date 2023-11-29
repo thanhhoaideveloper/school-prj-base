@@ -30,7 +30,7 @@
                                         <td>{{ $core->description }}</td>
                                         <td>
                                             @if ($core->thumbnail)
-                                                <img src="{{ $core->thumbnail }}" class="img-fluid zoom"
+                                                <img src="{{ asset($core->thumbnail) }}" class="img-fluid zoom"
                                                     style="max-width:80px" alt="{{ $core->title }}">
                                             @else
                                                 <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"

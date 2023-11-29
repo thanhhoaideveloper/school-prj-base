@@ -5,7 +5,7 @@
         <div class="card">
             <h5 class="card-header">Thêm banner</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.banner.store') }}">
+                <form method="post" action="{{ route('admin.banner.store') }}" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                     <div class="form-group">
@@ -34,8 +34,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="thumbnail" class="col-form-label">Media </label>
-                        <textarea class="form-control" id="thumbnail" name="thumbnail">{{ old('thumbnail') }}</textarea>
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image')">
+                            <i class="fas fa-plus"></i>
+                        </div>
                         @error('thumbnail')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

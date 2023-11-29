@@ -4,7 +4,7 @@
         <div class="card">
             <h5 class="card-header">Chỉnh sửa chương trình học</h5>
             <div class="card-body">
-                <form method="post" action="{{ route('admin.studyprogram.update', $studyProgram->id) }}">
+                <form method="post" action="{{ route('admin.studyprogram.update', $studyProgram->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -44,17 +44,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputPhoto" class="col-form-label">Hình ảnh <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                </a>
-                            </span>
-                            <input id="image" class="form-control" type="text" name="image"
-                                value="{{ $studyProgram->image }}">
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="image"
+                            hidden />
+                        <div class="d-flex align-items-center justify-content-center upload-image"
+                            onclick="uploadImage('input-upload-image')">
+                            @if ($studyProgram->image)
+                                <img width="200px" src="{{ asset($studyProgram->image) }}" />
+                            @else
+                                <i class="fas fa-plus"></i>
+                            @endif
                         </div>
-                        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
                         @error('image')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
