@@ -31,14 +31,14 @@ class SiteSettingController extends Controller
                                         );
             }
 
-            //check image favicon
-            if($request->file('favicon')){
-                $data['favicon'] = storeImage(
-                                            $request->file('favicon'), 
+            //check image footer logo
+            if($request->file('footer_logo')){
+                $data['footer_logo'] = storeImage(
+                                            $request->file('footer_logo'), 
                                             'sites'
                                         );
             }
-            
+
             if($siteSetting){
                 $this->siteSettingService->update($data, $siteSetting->id);
             }else{

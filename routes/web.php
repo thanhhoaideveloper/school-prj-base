@@ -97,6 +97,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
         Route::get('/edit/{id}','edit')->name('edit');
         Route::post('/create','store')->name('store');
     });
+
+    Route::group(['prefix' => 'filemanager'], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
+    });
 });
 
 //Authenticate
