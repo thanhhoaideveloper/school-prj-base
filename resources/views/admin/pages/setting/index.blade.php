@@ -1,8 +1,10 @@
 @extends('admin.layouts.master')
 @section('content')
     <div class="container-fluid">
-        <div class="card">
-            <h5 class="card-header">Cấu hình website</h5>
+        <div class="card shadow">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-primary float-left">Cấu hình website</h6>
+            </div>
             <div class="card-body">
                 <form method="post" action="{{ route('admin.site.update') }}" enctype="multipart/form-data">
                     @csrf
