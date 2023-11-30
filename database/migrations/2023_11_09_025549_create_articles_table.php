@@ -19,7 +19,9 @@ class CreateArticlesTable extends Migration
             $table->text('content');
             $table->string('thumbnail');
             $table->text('description');
-            $table->boolean('is_active_event')->default(ACTIVE);
+            $table->string('label');
+            $table->string('slug');
+            $table->integer('type');
             $table->string('create_by')->nullable();
             $table->string('update_by')->nullable();
 
