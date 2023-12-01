@@ -29,7 +29,7 @@
                                     <tr>
                                         <td class="text-center">{{ $key + 1 }}</td>
                                         <td>{{ $value->title }}</td>
-                                        <td>{{ $value->content }}</td>
+                                        <td>{{ $value->description }}</td>
                                         <td>{{ $value->create_by }}</td>
                                         <td>
                                             @if ($value->thumbnail)
@@ -41,10 +41,10 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @if ($value->is_active_event == 1)
-                                                <span class="badge badge-primary">{{ 'Sự kiện sắp diễn ra' }}</span>
+                                            @if ($value->type == 1)
+                                                <span class="badge badge-primary">Sự kiện sắp diễn ra</span>
                                             @else
-                                                <span class="badge badge-secondary">{{ 'Bài viết' }}</span>
+                                                <span class="badge badge-secondary">Bài viết</span>
                                             @endif
                                         </td>
                                         <td class="align-items-center justify-content-center">

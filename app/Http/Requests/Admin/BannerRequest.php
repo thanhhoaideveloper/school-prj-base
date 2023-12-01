@@ -24,16 +24,9 @@ class BannerRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'thumbnail' => [
-            //     'image',
-            //     'mimes:png,jpg,jpeg,gif',
-            //     'mimetypes:image/jpeg,image/png,image/gif'
-            // ],
-            'thumbnail' => 'required',
+            'image' => 'required',
             'title' => 'required',
-            'link' => 'nullable',
-            'content' => 'required',
-            'status' => ''
+            'description' => 'required',
         ];
     }
 }

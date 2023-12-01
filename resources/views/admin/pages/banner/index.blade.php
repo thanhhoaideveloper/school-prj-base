@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách banner</h6>
+                <h6 class="m-0 font-weight-bold text-primary float-left">Danh sách hình ảnh</h6>
                 <a href="{{ route('admin.banner.create') }}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip"
                     data-placement="bottom" title="Add banner"><i class="fas fa-plus"></i> Thêm
                     mới</a>
@@ -17,10 +17,8 @@
                                 <tr>
                                     <th style="width: 2%;">ID</th>
                                     <th>Tiêu đề</th>
-                                    <th>Nội dung</th>
-                                    <th>Đường dẫn</th>
-                                    <th>Media</th>
-                                    <th style="width: 10%;">Trạng thái</th>
+                                    <th>Mô tả</th>
+                                    <th>Hình ảnh</th>
                                     <th style="width: 8%;">Thao tác</th>
                                 </tr>
                             </thead>
@@ -29,22 +27,14 @@
                                     <tr>
                                         <td>{{ $banner->id }}</td>
                                         <td>{{ $banner->title }}</td>
-                                        <td>{{ $banner->content }}</td>
-                                        <td>{{ $banner->link }}</td>
+                                        <td>{{ $banner->description }}</td>
                                         <td>
-                                            @if ($banner->thumbnail)
-                                                <img src="{{ asset($banner->thumbnail) }}" class="img-fluid zoom"
+                                            @if ($banner->image)
+                                                <img src="{{ asset($banner->image) }}" class="img-fluid zoom"
                                                     style="max-width:80px" alt="{{ $banner->title }}">
                                             @else
                                                 <img src="{{ asset('backend/img/thumbnail-default.jpg') }}"
                                                     class="img-fluid zoom" style="max-width:100%" alt="avatar.png">
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if ($banner->status == 1)
-                                                <span class="badge badge-primary">{{ 'Banner Chính' }}</span>
-                                            @else
-                                                <span class="badge badge-secondary">{{ 'Banner Phụ' }}</span>
                                             @endif
                                         </td>
                                         <td>
@@ -66,7 +56,7 @@
                             </tbody>
                         </table>
                     @else
-                        <h6 class="text-center">Vui lòng thêm banner!</h6>
+                        <h6 class="text-center">Vui lòng thêm hình ảnh!</h6>
                     @endif
                 </div>
             </div>

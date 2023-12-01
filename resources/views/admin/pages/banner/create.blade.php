@@ -18,69 +18,30 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="content" class="col-form-label">Nội dung <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="content" name="content">{{ old('content') }}</textarea>
-                        @error('content')
+                        <label for="description" class="col-form-label">Mô tả <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
+                        @error('description')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <label for="link" class="col-form-label">Đường dẫn </label>
-                        <textarea class="form-control" id="link" name="link">{{ old('link') }}</textarea>
-                        @error('link')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail"
+                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="image"
                             hidden />
                         <div class="d-flex align-items-center justify-content-center upload-image"
                             onclick="uploadImage('input-upload-image')">
                             <i class="fas fa-plus"></i>
                         </div>
-                        @error('thumbnail')
+                        @error('image')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-
-                    <div class="form-group">
-                        <label for="status" class="col-form-label">Trạng thái <span class="text-danger">*</span></label>
-                        <select name="status" class="form-control">
-                            <option value="1">Banner Chính</option>
-                            <option value="0" selected>Banner Phụ</option>
-                        </select>
-                        @error('status')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-
                     <div class="form-group mb-3">
-                        <button class="btn btn-success" type="submit">Thêm banner</button>
+                        <button type="reset" class="btn btn-warning">Nhập lại</button>
+                        <button class="btn btn-success btn-loading" type="submit">Lưu</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 @endsection
-
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('backend/summernote/summernote.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-@endpush
-@push('scripts')
-    <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
-    <script src="{{ asset('backend/summernote/summernote.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-
-    <script>
-        $('#summary').summernote();
-        $('#description').summernote();
-        var route_prefix = "{{ url('/filemanager') }}";
-        $('#lfm').filemanager('image', {
-            prefix: route_prefix
-        });
-    </script>
-@endpush

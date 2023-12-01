@@ -32,7 +32,8 @@ class ArticleRequest extends FormRequest
                 'mimetypes:image/jpeg,image/png,image/gif'
             ],
             'description' => 'required',
-            'is_active_event' => 'required',
+            'type' => 'required',
+            'label' => 'nullable'
         ];
     }
 }
