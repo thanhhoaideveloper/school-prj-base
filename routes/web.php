@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\StudyProgramController;
 use App\Http\Controllers\Admin\RatingController;
+use App\Http\Controllers\Home\ArticleHomeController;
 use App\Http\Controllers\Home\HomePageController;
 use Illuminate\Support\Facades\Route;
 
@@ -107,4 +108,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 Route::controller(AuthenticateController::class)->group(function () {
     Route::get('login', 'loginPage')->name('login');
     Route::post('login','loginHandle')->name('loginHandle');
+});
+
+Route::controller(ArticleHomeController::class)->prefix('article')->name('article.')->group(function () {
+    Route::get('/detail/{id}', 'articleDetailPage')->name('article_detail');
 });
