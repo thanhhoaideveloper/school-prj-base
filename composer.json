@@ -11,7 +11,8 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
-        "php-flasher/flasher-laravel": "^1.15"
+        "php-flasher/flasher-laravel": "^1.15",
+        "unisharp/laravel-filemanager": "^2.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

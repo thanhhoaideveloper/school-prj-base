@@ -4,6 +4,7 @@
     <link href="{{ asset('home-page-2/css/styles.css') }}" rel="stylesheet"/>
     <link href="{{ asset('home-page-2/css/style-guide.css') }}" rel="stylesheet"/>
     <link href="{{ asset('home-page-2/css/globals.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <style>
     .HOMEPAGE .div-image {
@@ -59,7 +60,7 @@
 
 <div class="HOMEPAGE">
 
-    <div class="div">
+    <div class="div container-fluid row">
 
 
         @yield('content')
@@ -67,7 +68,6 @@
         @include('user-interface.banner')
         @include('user-interface.header')
         @include('user-interface.footer')
-        @include('user-interface.button-float-footer.index')
 
 
     </div>

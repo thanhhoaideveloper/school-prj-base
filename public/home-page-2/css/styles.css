@@ -629,7 +629,6 @@
 .HOMEPAGE .rectangle {
     position: absolute;
     width: 1440px;
-    height: 548px;
     top: 0;
     left: 0;
     object-fit: cover;
@@ -1725,8 +1724,8 @@
     align-items: flex-start;
     gap: 12px;
     position: fixed;
-    top: 806px;
-    left: 1351px;
+    bottom: 30px;
+    right: 30px;
 }
 
 .HOMEPAGE .img-wrapper {
@@ -1745,4 +1744,16 @@
     height: 44px;
     top: 5px;
     left: 5px;
+}
+
+.text-style {
+    width: 100%;
+    font-weight: 800;
+    color: var(--tokens-text-text-tertiary);
+    letter-spacing: 0.32px;
+    line-height: 20px;
+    white-space: nowrap;
+    position: relative;
+    font-family: "Nunito", Helvetica;
+    font-size: 16px;
 }

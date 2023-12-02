@@ -23,11 +23,11 @@ const uploadImage = (inputId) => {
     $(`.${inputId}`).click();
 }
 
-const onChangeInputFile = (input) => {
+const onChangeInputFile = (input, classReviewImage = 'upload-image') => {
     if (input.files.length) {
         const src = URL.createObjectURL(input.files[0]);
         const image = `<img style="width:200px;" src="${src}" />`;
-        $(`.upload-image`).html(image);
+        $(`.${classReviewImage}`).html(image);
     }
 }
 
