@@ -35,9 +35,9 @@
 /* Upload image */
 
 .upload-image{
-    height: 200px;
+    height: 100%;
     width: 100%;
-    border: 1px dashed rgb(133, 133, 133);
+    /* border: 1px dashed rgb(133, 133, 133); */
     cursor: pointer;
 }
 
