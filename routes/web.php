@@ -107,5 +107,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 Route::controller(AuthenticateController::class)->group(function () {
     Route::get('login', 'loginPage')->name('login');
     Route::post('login', 'loginHandle')->name('loginHandle');
-    Route::get('logout','userLogout')->name('logout');
+    Route::get('logout', 'userLogout')->name('logout');
+    Route::patch('password', 'changPassword')->name('password.change');
+    Route::get('password', 'changePasswordPage')->name('password');
 });

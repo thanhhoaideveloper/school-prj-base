@@ -12,12 +12,12 @@
             <span>Trang chính</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#article" data-toggle="collapse" data-target="#article"
+            aria-expanded="true" aria-controls="article">
             <i class="far fa-newspaper"></i>
             <span>Bài viết</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="article" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{ isCheckActiveRoute('admin.article.index') }}"
                     href="{{ route('admin.article.index') }}">Danh sách bài viết</a>
@@ -31,10 +31,19 @@
             <i class="far fa-images"></i>
             <span>Gallery</span></a>
     </li>
-    <li class="nav-item  {{ isCheckActiveRoute('admin.site.index') }}">
-        <a class="nav-link" href="{{ route('admin.site.index') }}">
-            <i class="fas fa-tools"></i>
-            <span>Cài đặt</span></a>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#setting" data-toggle="collapse" data-target="#setting"
+            aria-expanded="true" aria-controls="setting">
+            <i class="far fa-newspaper"></i>
+            <span>Cài đặt</span>
+        </a>
+        <div id="setting" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.site.index') }}">Cài đặt trang</a>
+                <a class="collapse-item" href="{{ route('password') }}">Đổi mật khẩu</a>
+            </div>
+        </div>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
