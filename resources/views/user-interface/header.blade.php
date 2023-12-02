@@ -1,14 +1,14 @@
-<div class="div-nav" style="margin: 0 7px">
-    <div class="content-wrapper" style="margin: 0 auto">
+<div class="div-nav" style="width: 100%">
+    <div class="content-wrapper" style="margin: 0 auto; left: 0; top: 10px">
         <div class="content-3">
             <div class="div-6">
-                <div class="ghost-button"><div class="th-ng-tin">Về chúng tôi</div></div>
-                <div class="ghost-button"><div class="th-ng-tin">Chương trình học</div></div>
+                <a href="#" class="ghost-button"><div class="th-ng-tin">Về chúng tôi</div></a>
+                <a href="#" class="ghost-button"><div class="th-ng-tin">Chương trình học</div></a>
             </div>
-            <img class="logo-2" src="{{asset('home-page-2/img/logo-3.png')}}" />
+            <a href="{{route('home')}}"><img class="logo-2" src="{{asset('home-page-2/img/logo-3.png')}}" /></a>
             <div class="div-6">
-                <div class="ghost-button"><p class="th-ng-tin">Tin tức &amp; Hình ảnh</p></div>
-                <div class="ghost-button"><div class="th-ng-tin">Liên hệ</div></div>
+                <a href="#" class="ghost-button"><div class="th-ng-tin">Tin tức &amp; Hình ảnh</div></a>
+                <a href="#" class="ghost-button"><div class="th-ng-tin">Liên hệ</div></a>
             </div>
         </div>
     </div>
