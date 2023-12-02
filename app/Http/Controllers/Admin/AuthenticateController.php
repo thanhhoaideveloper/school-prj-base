@@ -9,17 +9,26 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticateController extends Controller
 {
-    public function loginPage(){
+    public function loginPage()
+    {
         return view("admin.pages.auth.login");
     }
 
-    public function loginHandle(LoginRequest $request){
+    public function loginHandle(LoginRequest $request)
+    {
         $credentials = $request->validated();
-        if(Auth::attempt($credentials)){
+        if (Auth::attempt($credentials)) {
             return redirect()->route('admin.dashboard');
         }
 
         flash()->addError(AUTHENTICATE_ERROR);
         return redirect()->route('login');
+    }
+
+    public function userLogout()
+    {
+        Auth::logout();
+        request()->session()->flash('success', 'Đăng xuất thành công!');
+        return back();
     }
 }
