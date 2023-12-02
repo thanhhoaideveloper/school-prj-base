@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="card">
-            <h5 class="card-header">Thêm banner</h5>
+            <h5 class="card-header">Thêm hình ảnh</h5>
             <div class="card-body">
                 <form method="post" action="{{ route('admin.banner.store') }}" enctype="multipart/form-data">
                     @csrf
@@ -26,6 +26,8 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="image" class="col-form-label">Hình ảnh <span class="text-danger">*</span></label>
+
                         <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="image"
                             hidden />
                         <div class="d-flex align-items-center justify-content-center upload-image"

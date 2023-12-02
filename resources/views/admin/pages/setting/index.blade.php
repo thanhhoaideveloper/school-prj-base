@@ -26,8 +26,10 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="file" class="input-upload-image" onchange="onChangeInputFile(this, 'upload-image-logo')" name="logo"
-                            hidden />
+                        <label for="logo" class="col-form-label">Logo <span class="text-danger">*</span></label>
+
+                        <input type="file" class="input-upload-image"
+                            onchange="onChangeInputFile(this, 'upload-image-logo')" name="logo" hidden />
                         <div class="d-flex align-items-center justify-content-center upload-image upload-image-logo"
                             onclick="uploadImage('input-upload-image')">
                             @if ($site && $site->logo)
@@ -41,11 +43,11 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input type="file" 
-                                class="input-upload-image-footer" 
-                                onchange="onChangeInputFile(this, 'upload-image-footer')" 
-                                name="footer_logo"
-                            hidden />
+                        <label for="footer_logo" class="col-form-label">Footer Logo <span
+                                class="text-danger">*</span></label>
+
+                        <input type="file" class="input-upload-image-footer"
+                            onchange="onChangeInputFile(this, 'upload-image-footer')" name="footer_logo" hidden />
                         <div class="d-flex align-items-center justify-content-center upload-image upload-image-footer"
                             onclick="uploadImage('input-upload-image-footer')">
                             @if ($site && $site->footer_logo)

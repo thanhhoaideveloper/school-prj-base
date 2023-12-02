@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ $configs['description'] ?? DESCRIPTION }}">
-    <meta name="author" content="Dịch vụ thiết kế web - hovietlong234@gmail.com">
+    <meta name="author" content="Dịch vụ thiết kế web - Binastudio.vn">
     <title>{{ $configs['title'] ?? TITLE }}</title>
     <link rel="shortcut icon" href="{{ asset($configs['favicon'] ?? '') }}">
     <!-- Custom fonts for this template-->
@@ -49,15 +49,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn đăng xuất?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Chọn "Đăng xuất" để thoát khỏi trang quản lý.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
+                    <a class="btn btn-primary" href="{{ route('logout') }}">Đăng xuất</a>
                 </div>
             </div>
         </div>
