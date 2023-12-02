@@ -37,6 +37,8 @@
 
 
                     <div class="form-group">
+                        <label for="thumbnail" class="col-form-label">Ảnh Thumbnail <span
+                                class="text-danger">*</span></label>
                         <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail"
                             hidden />
                         <div class="d-flex align-items-center justify-content-center upload-image"
