@@ -18,13 +18,24 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label for="inputContent">Mô tả ngắn</label>
-                        <textarea class="form-control" name="content" id="inputContent" rows="3">{{ old('content') }}</textarea>
+                        <label for="inputDesc" class="col-form-label">Mô tả ngắn</label>
+                        <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
+                        @error('description')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Nội dung</label>
+                        <textarea class="form-control" name="content" id="content-main" rows="3">{{ old('content') }}</textarea>
                         @error('content')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
+
                     <div class="form-group">
                         <input type="file" class="input-upload-image" onchange="onChangeInputFile(this)" name="thumbnail"
                             hidden />
@@ -36,23 +47,16 @@
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label for="inputDesc" class="col-form-label">
-                            Mô tả
-                        </label>
-                        <textarea class="form-control" id="description" rows="3" name="description">{{ old('description') }}</textarea>
-                        @error('description')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="is_active_event" class="col-form-label">Loại bài viết <span
+                        <label for="type" class="col-form-label">Loại bài viết <span
                                 class="text-danger">*</span></label>
-                        <select name="is_active_event" class="form-control">
-                            <option value="1">Sự kiện sắp diễn ra</option>
-                            <option value="0" selected>Bài viết</option>
+                        <select name="type" class="form-control">
+                            <option value="1" selected>Chăm sóc trẻ</option>
+                            <option value="2">Giáo dục</option>
+                            <option value="3">Sự kiện</option>
                         </select>
-                        @error('is_active_event')
+                        @error('type')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
@@ -66,7 +70,7 @@
     </div>
     @push('scripts')
         <script>
-            $('#description').summernote({
+            $('#content-main').summernote({
                 height: 300,
             });
         </script>

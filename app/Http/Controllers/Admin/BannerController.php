@@ -32,15 +32,15 @@ class BannerController extends Controller
         try {
             $data = $request->validated();
             //check image favicon
-            if ($request->file('thumbnail')) {
-                $data['thumbnail'] = storeImage(
-                    $request->file('thumbnail'),
-                    'banners'
+            if ($request->file('image')) {
+                $data['image'] = storeImage(
+                    $request->file('image'),
+                    'gallery'
                 );
             }
             $this->bannerService->save($data);
             return redirect()->route('admin.banner.index')
-                ->with('success', 'Tạo banner thành công!');
+                ->with('success', 'Thêm hình ảnh thành công!');
         } catch (Exception $e) {
             flash()->addError($e->getMessage());
             return redirect()->back();
@@ -60,7 +60,7 @@ class BannerController extends Controller
             }
             $this->bannerService->update($data, $id);
             return redirect()->route('admin.banner.index')
-                ->with('success', 'Cập nhật banner thành công!');
+                ->with('success', 'Cập nhật hình ảnh thành công!');
         } catch (Exception $e) {
             flash()->addError($e->getMessage());
             return redirect()->back();
@@ -82,6 +82,6 @@ class BannerController extends Controller
     {
         $this->bannerService->delete($id);
         return redirect()->route('admin.banner.index')
-            ->with('success', 'Xoá banner thành công!');
+            ->with('success', 'Xoá hình ảnh thành công!');
     }
 }
