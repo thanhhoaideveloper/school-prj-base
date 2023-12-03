@@ -8,6 +8,7 @@ use App\Services\Admin\ArticleService;
 use App\Services\Admin\BannerService;
 use App\Services\Admin\RatingService;
 use App\Services\Admin\StudyProgramService;
+use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
@@ -27,5 +28,22 @@ class HomePageController extends Controller
         $viewModel = [];
         $viewModel["article"] = $this->articleService->first();
         return view("user-interface.home-page.index", $viewModel);
+    }
+    public function getNextArticle(Request $request)
+    {   
+        $id = $request->all()['articleId'];
+        try {
+            $article = $this->articleService
+                ->where('id', 2)
+                ->orderBy('id', 'asc')
+                ->first();
+
+
+            if (!$article) {
+                return response()->json(['error' => 'Không có bài viết kế tiếp.']);
+            }
+            return response()->json(['view' => 'user-interface.home-page.article-view', 'data' => ['article' => $article]]);
+        } catch (Exception $e) {
+        }
     }
 }

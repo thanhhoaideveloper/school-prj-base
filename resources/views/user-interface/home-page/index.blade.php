@@ -22,11 +22,6 @@
     .comment {
         flex: 0 0 46%;
     }
-
-    @media (max-width: 767px) {
-        .div-content {
-        }
-    }
 </style>
 
 @section('content')
@@ -35,34 +30,10 @@
         <div class="div-activities">
             <div class="div-carousel">
                 <a href="#"><img class="left-button" src="{{asset('home-page-2/img/left-button.svg')}}" /></a>
-                <div class="border-carousel">
-                    <div class="overlap-group">
-                        <div class="div-content">
-                            <div class="image"></div>
-                            <div class="content-contailner">
-                                <div class="content">
-                                    <div class="tag"><div class="text-wrapper">Education</div></div>
-                                    <div class="title">
-                                        <p class="p">How to Teach Preschoolers About Money</p>
-                                        <p class="text-wrapper-2">
-                                            In the modern world, having financial literacy is a crucial skill for children to navigate
-                                            life successfully. While it may seem early to teach pre-schoolers about money, introducing
-                                            them to basic concepts in a Montessori-inspired way can lay a strong foundation for their
-                                            future financial understanding.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="accent">
-                                    <div class="text-wrapper-3">Nov 4</div>
-                                    <div class="text-wrapper-3">·</div>
-                                    <div class="text-wrapper-3">10 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                        <img class="heart" src="{{asset('home-page-2/img/heart-3x-1.png')}}" />
-                    </div>
+                <div class="border-carousel" id="articleId">
+                    @include('user-interface.home-page.article-view')
                 </div>
-                <a href="#"><img class="right-button" src="{{asset('home-page-2/img/right-button.svg')}}" /></a>
+                <button onclick="nextArticle()" href="#"><img class="right-button" src="{{asset('home-page-2/img/right-button.svg')}}" /></button>
             </div>
             <div class="div-title">
                 <div class="overlap">
@@ -455,8 +426,9 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var nextArticleRoute = '{{ route('nextArticle') }}';
+    var articleId = {{$article['id']}};
+</script>
 @endsection
 
