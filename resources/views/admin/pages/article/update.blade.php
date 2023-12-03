@@ -52,13 +52,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="is_active_event" class="col-form-label">Loại bài viết <span
+                        <label for="type" class="col-form-label">Loại bài viết <span
                                 class="text-danger">*</span></label>
-                        <select name="is_active_event" class="form-control">
-                            <option value="1" {{ $article->is_active_event == '1' ? 'selected' : null}}>Sự kiện sắp diễn ra</option>
-                            <option value="0" {{ $article->is_active_event == '0' ? 'selected' : null}}>Bài viết</option>
+                        <select name="type" class="form-control">
+                            <option value="1" {{ $article->type == '1' ? 'selected' : null }}>Sự kiện</option>
+                            <option value="2" {{ $article->type == '2' ? 'selected' : null }}>Montessori 0-3</option>
+                            <option value="3" {{ $article->type == '3' ? 'selected' : null }}>Montessori 3-6</option>
+                            <option value="4" {{ $article->type == '4' ? 'selected' : null }}>Làm cha mẹ</option>
+                            <option value="5" {{ $article->type == '5' ? 'selected' : null }}>Sách hay</option>
+                            <option value="6" {{ $article->type == '6' ? 'selected' : null }}>Địa điểm vui chơi</option>
                         </select>
-                        @error('is_active_event')
+                        @error('type')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

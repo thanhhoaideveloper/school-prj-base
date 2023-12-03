@@ -54,9 +54,12 @@
                         <label for="type" class="col-form-label">Loại bài viết <span
                                 class="text-danger">*</span></label>
                         <select name="type" class="form-control">
-                            <option value="1" selected>Chăm sóc trẻ</option>
-                            <option value="2">Giáo dục</option>
-                            <option value="3">Sự kiện</option>
+                            <option value="1" selected>Sự kiện</option>
+                            <option value="2">Montessori 0-3</option>
+                            <option value="3">Montessori 3-6</option>
+                            <option value="4">Làm cha mẹ</option>
+                            <option value="5">Sách hay</option>
+                            <option value="6">Địa điểm vui chơi</option>
                         </select>
                         @error('type')
                             <span class="text-danger">{{ $message }}</span>
