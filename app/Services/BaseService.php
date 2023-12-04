@@ -100,7 +100,7 @@ class BaseService
         }
         return $this->model->paginate($limit);
     }
-    
+
     /**
      * where
      *
@@ -112,5 +112,10 @@ class BaseService
     {
         $result = $this->model->where($operator, $value);
         return $result;
+    }
+
+    public function getModel()
+    {
+        return $this->model;
     }
 }

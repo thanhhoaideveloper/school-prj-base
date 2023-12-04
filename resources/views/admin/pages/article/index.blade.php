@@ -41,11 +41,35 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @if ($value->type == 1)
-                                                <span class="badge badge-primary">Sự kiện sắp diễn ra</span>
-                                            @else
-                                                <span class="badge badge-secondary">Bài viết</span>
-                                            @endif
+                                            @switch($value->type)
+                                                @case(1)
+                                                    <span class="badge badge-primary">Sự kiện</span>
+                                                @break
+
+                                                @case(2)
+                                                    <span class="badge badge-primary">Montessori 0-3</span>
+                                                @break
+
+                                                @case(3)
+                                                    <span class="badge badge-primary">Montessori 3-6</span>
+                                                @break
+
+                                                @case(4)
+                                                    <span class="badge badge-primary">Làm cha mẹ</span>
+                                                @break
+
+                                                @case(5)
+                                                    <span class="badge badge-primary">Sách hay</span>
+                                                @break
+
+                                                @case(6)
+                                                    <span class="badge badge-primary">Địa điểm vui chơi</span>
+                                                @break
+
+                                                @default
+                                                    <span class="badge badge-secondary">Bài viết</span>
+                                            @endswitch
+
                                         </td>
                                         <td class="align-items-center justify-content-center">
                                             <a href="{{ route('admin.article.update', $value->id) }}"

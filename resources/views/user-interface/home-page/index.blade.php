@@ -428,7 +428,7 @@
 
 <script type="text/javascript">
     var nextArticleRoute = '{{ route('nextArticle') }}';
-    var articleId = {{$article['id']}};
+    var articleId = {{--$article['id']--}};
 </script>
 @endsection
 
