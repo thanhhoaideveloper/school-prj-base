@@ -89,4 +89,8 @@ class HomePageController extends Controller
     public function aboutUs(){
         return view('user-interface.about-us.index');
     }
+
+    public function articleDetail($id){
+        return view('user-interface.article.detail');
+    }
 }

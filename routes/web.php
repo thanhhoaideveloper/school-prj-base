@@ -28,7 +28,10 @@ Route::controller(HomePageController::class)->group(function () {
     Route::get('/get-next-article', 'getNextArticle')->name('nextArticle');
     Route::post('/send-messge','fetchDataToSheet')->name('sendMessage');
     Route::get('/about-us','aboutUs')->name('about');
+    Route::get('/article/{id}', 'articleDetail')->name('articleDetail');
 });
+
+
 
 
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
