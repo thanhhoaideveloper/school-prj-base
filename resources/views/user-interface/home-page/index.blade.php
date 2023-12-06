@@ -1,29 +1,4 @@
 @extends('user-interface.index')
-
-<style>
-    .div-testimonial {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .overlap-4 {
-        position: relative;
-        width: 100%;
-        /*overflow: hidden;*/
-    }
-
-    .carousel {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%;
-        overflow-x:scroll;
-        scroll-snap-type: x mandatory;
-    }
-    .comment {
-        flex: 0 0 46%;
-    }
-</style>
-
 @section('content')
 <div class="HOMEPAGE">
     <div class="div ">
