@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\StudyProgramController;
 use App\Http\Controllers\Admin\RatingController;
-use App\Http\Controllers\Home\HomePageController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,12 +23,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(HomePageController::class)->group(function () {
+Route::controller(HomeController::class)->group(function () {
     Route::get("/", 'index')->name('home');
-    Route::get('/get-next-article', 'getNextArticle')->name('nextArticle');
-    Route::post('/send-messge','fetchDataToSheet')->name('sendMessage');
-    Route::get('/about-us','aboutUs')->name('about');
-    Route::get('/article/{id}', 'articleDetail')->name('articleDetail');
+    Route::post('/send-messge', 'fetchDataToSheet')->name('sendMessage');
+    // about
+    Route::get('/ve-chung-toi', 'about')->name('about');
+    // article
+    Route::get('/bai-viet', 'article')->name('article');
+    Route::get('/bai-viet/{slug}', 'articleDetail')->name('articleDetail');
+    // program
+    Route::get('/chuong-trinh-hoc/se-nau', 'seNau');
+    Route::get('/chuong-trinh-hoc/chich-bong', 'chichBong');
+    Route::get('/chuong-trinh-hoc/bo-cau', 'boCau');
+    // contact
+    Route::get('/lien-he', 'contact');
 });
 
 
