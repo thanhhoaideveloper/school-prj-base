@@ -1,0 +1,785 @@
+.programs-chichbong {
+  background-color: #fff8ef;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.programs-chichbong .div {
+  background-color: var(--tokens-surface-surface-primary);
+  overflow: hidden;
+  width: 1337px;
+  height: 3925px;
+  position: relative;
+}
+
+.programs-chichbong .frame {
+  position: absolute;
+  width: 1337px;
+  height: 674px;
+  top: 0;
+  left: 0;
+  background-color: var(--tokens-surface-surface-secondary);
+}
+
+.programs-chichbong .frame-2 {
+  position: absolute;
+  width: 1034px;
+  height: 218px;
+  top: 188px;
+  left: 152px;
+}
+
+.programs-chichbong .text-wrapper {
+  position: absolute;
+  width: 861px;
+  top: -1px;
+  left: 86px;
+  font-family: var(--header-h1-font-family);
+  font-weight: var(--header-h1-font-weight);
+  color: var(--primitives-color-brand-secondary-brown);
+  font-size: var(--header-h1-font-size);
+  text-align: center;
+  letter-spacing: var(--header-h1-letter-spacing);
+  line-height: var(--header-h1-line-height);
+  font-style: var(--header-h1-font-style);
+}
+
+.programs-chichbong .p {
+  position: absolute;
+  width: 617px;
+  top: 96px;
+  left: 208px;
+  font-family: var(--sub-header-font-family);
+  font-weight: var(--sub-header-font-weight);
+  color: var(--tokens-text-text-primary);
+  font-size: var(--sub-header-font-size);
+  text-align: center;
+  letter-spacing: var(--sub-header-letter-spacing);
+  line-height: var(--sub-header-line-height);
+  font-style: var(--sub-header-font-style);
+}
+
+.programs-chichbong .frame-3 {
+  position: absolute;
+  width: 1106px;
+  height: 443px;
+  top: 513px;
+  left: 116px;
+}
+
+.programs-chichbong .div-program-b-cu {
+  position: absolute;
+  width: 340px;
+  height: 400px;
+  top: 22px;
+  left: 739px;
+  border-radius: 16px;
+  border: 1px solid;
+  border-color: var(--tokens-border-border-primary);
+  transform: rotate(8deg);
+  background-image: url(./img/div-program-b-c-u.svg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-color: var(--tokens-surface-surface-white);
+}
+
+.programs-chichbong .text-wrapper-2 {
+  position: absolute;
+  width: 340px;
+  top: 340px;
+  left: 0;
+  font-family: var(--sub-header-font-family);
+  font-weight: var(--sub-header-font-weight);
+  color: var(--tokens-text-text-primary);
+  font-size: var(--sub-header-font-size);
+  text-align: center;
+  letter-spacing: var(--sub-header-letter-spacing);
+  line-height: var(--sub-header-line-height);
+  font-style: var(--sub-header-font-style);
+}
+
+.programs-chichbong .div-program-s-nu {
+  position: absolute;
+  width: 340px;
+  height: 400px;
+  top: 0;
+  left: 383px;
+  border-radius: 16px;
+  border: 1px solid;
+  border-color: var(--tokens-border-border-primary);
+  background-image: url(./img/div-program-s-n-u.svg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-color: var(--tokens-surface-surface-white);
+}
+
+.programs-chichbong .div-program-chch-bng {
+  position: absolute;
+  width: 340px;
+  height: 400px;
+  top: 22px;
+  left: 26px;
+  border-radius: 16px;
+  border: 1px solid;
+  border-color: var(--tokens-text-text-primary);
+  transform: rotate(-8deg);
+  background: linear-gradient(180deg, rgb(155, 186, 60) 0%, rgb(228.44, 221.36, 51.4) 100%);
+  background-color: var(--tokens-surface-surface-primary);
+}
+
+.programs-chichbong .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  margin-right: -2px;
+  font-family: var(--header-h3-font-family);
+  font-weight: var(--header-h3-font-weight);
+  color: var(--tokens-text-text-primary);
+  font-size: var(--header-h3-font-size);
+  letter-spacing: var(--header-h3-letter-spacing);
+  line-height: var(--header-h3-line-height);
+  white-space: nowrap;
+  font-style: var(--header-h3-font-style);
+}
+
+.programs-chichbong .text-wrapper-4 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Nunito", Helvetica;
+  font-weight: 500;
+  color: var(--tokens-text-text-secondary);
+  font-size: 14px;
+  letter-spacing: -0.42px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+
+.programs-chichbong .flexcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.programs-chichbong .div-2 {
+  position: relative;
+  align-self: stretch;
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: var(--tokens-text-text-secondary);
+  font-size: var(--body-bold-font-size);
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  font-style: var(--body-bold-font-style);
+}
+
+.programs-chichbong .span {
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: #33312b;
+  font-size: var(--body-bold-font-size);
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  font-style: var(--body-bold-font-style);
+}
+
+.programs-chichbong .overlap {
+  position: absolute;
+  width: 1337px;
+  height: 3124px;
+  top: 956px;
+  left: 0;
+}
+
+.programs-chichbong .frame-4 {
+  display: flex;
+  width: 1208px;
+  align-items: flex-start;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  left: 67px;
+}
+
+.programs-chichbong .div-3 {
+  position: relative;
+  width: 296px;
+  height: 986px;
+}
+
+.programs-chichbong .frame-5 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: absolute;
+  top: 142px;
+  left: 0;
+}
+
+.programs-chichbong .text-wrapper-5 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--header-h3-font-family);
+  font-weight: var(--header-h3-font-weight);
+  color: var(--primitives-color-brand-primary-green);
+  font-size: var(--header-h3-font-size);
+  letter-spacing: var(--header-h3-letter-spacing);
+  line-height: var(--header-h3-line-height);
+  font-style: var(--header-h3-font-style);
+}
+
+.programs-chichbong .div-4 {
+  display: flex;
+  flex-direction: column;
+  width: 296px;
+  align-items: flex-start;
+  gap: var(--primitives-spacing-1);
+  padding: var(--primitives-spacing-6) var(--primitives-spacing-5) var(--primitives-spacing-10)
+    var(--primitives-spacing-5);
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--tokens-surface-surface-white);
+  border-radius: 16px;
+  border: 1px solid;
+  border-color: var(--tokens-border-border-secondary);
+}
+
+.programs-chichbong .caret-up {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.programs-chichbong .frame-6 {
+  position: absolute;
+  width: 296px;
+  height: 263px;
+  top: 723px;
+  left: 0;
+  background-image: url(./img/frame-394.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.programs-chichbong .container-wrapper {
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  height: 3124px;
+}
+
+.programs-chichbong .container {
+  display: flex;
+  flex-direction: column;
+  width: 892px;
+  align-items: center;
+  gap: var(--primitives-spacing-10);
+  padding: var(--primitives-spacing-10);
+  position: relative;
+  top: 207px;
+  background-color: var(--tokens-surface-surface-white);
+  border-radius: var(--primitives-spacing-4);
+  border: 1px solid;
+  border-color: var(--tokens-border-border-secondary);
+}
+
+.programs-chichbong .div-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.programs-chichbong .div-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--primitives-spacing-7);
+  padding: 0px var(--primitives-spacing-4) 0px var(--primitives-spacing-8);
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.programs-chichbong .text-wrapper-6 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--header-h3-font-family);
+  font-weight: var(--header-h3-font-weight);
+  color: #000000;
+  font-size: var(--header-h3-font-size);
+  letter-spacing: var(--header-h3-letter-spacing);
+  line-height: var(--header-h3-line-height);
+  font-style: var(--header-h3-font-style);
+}
+
+.programs-chichbong .group {
+  position: relative;
+  width: 632px;
+  height: 553px;
+}
+
+.programs-chichbong .div-carousel {
+  position: relative;
+  height: 553px;
+}
+
+.programs-chichbong .rectangle {
+  width: 630px;
+  height: 420px;
+  top: 0;
+  left: 1px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.programs-chichbong .img {
+  width: 117px;
+  height: 117px;
+  top: 436px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.programs-chichbong .rectangle-2 {
+  width: 117px;
+  height: 117px;
+  top: 436px;
+  left: 129px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.programs-chichbong .rectangle-3 {
+  width: 116px;
+  height: 117px;
+  top: 436px;
+  left: 258px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.programs-chichbong .rectangle-4 {
+  width: 117px;
+  height: 117px;
+  top: 436px;
+  left: 386px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.programs-chichbong .rectangle-5 {
+  width: 117px;
+  height: 117px;
+  top: 436px;
+  left: 515px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.programs-chichbong .rectangle-6 {
+  height: 380px;
+  object-fit: cover;
+  position: relative;
+  width: 570px;
+}
+
+.programs-chichbong .rectangle-7 {
+  height: 420px;
+  position: relative;
+  width: 570px;
+}
+
+.programs-chichbong .text {
+  position: relative;
+  align-self: stretch;
+  font-family: "Nunito", Helvetica;
+  font-weight: 700;
+  color: var(--tokens-text-text-secondary);
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: 16px;
+}
+
+.programs-chichbong .text-wrapper-7 {
+  line-height: var(--body-bold-line-height);
+  font-family: var(--body-bold-font-family);
+  font-style: var(--body-bold-font-style);
+  font-weight: var(--body-bold-font-weight);
+  letter-spacing: var(--body-bold-letter-spacing);
+  font-size: var(--body-bold-font-size);
+}
+
+.programs-chichbong .text-wrapper-8 {
+  font-size: var(--sub-header-font-size);
+  letter-spacing: var(--sub-header-letter-spacing);
+  line-height: var(--sub-header-line-height);
+  font-family: var(--sub-header-font-family);
+  font-style: var(--sub-header-font-style);
+  font-weight: var(--sub-header-font-weight);
+}
+
+.programs-chichbong .div-footer {
+  position: absolute;
+  width: 1337px;
+  height: 285px;
+  top: 2684px;
+  left: 0;
+  background-color: var(--primitives-color-brand-primary-teal);
+}
+
+.programs-chichbong .frame-7 {
+  display: flex;
+  width: 1144px;
+  align-items: flex-start;
+  gap: 151px;
+  position: absolute;
+  top: 56px;
+  left: 96px;
+}
+
+.programs-chichbong .div-logo-address {
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  height: 142px;
+  overflow: hidden;
+}
+
+.programs-chichbong .logo {
+  position: absolute;
+  width: 152px;
+  height: 71px;
+  top: 0;
+  left: 0;
+}
+
+.programs-chichbong .text-wrapper-9 {
+  position: absolute;
+  width: 298px;
+  top: -1px;
+  left: 199px;
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: #8db1ae;
+  font-size: var(--body-bold-font-size);
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  font-style: var(--body-bold-font-style);
+}
+
+.programs-chichbong .contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 41px 41px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.programs-chichbong .frame-8 {
+  position: relative;
+  width: 165px;
+  height: 24px;
+}
+
+.programs-chichbong .img-2 {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 0;
+}
+
+.programs-chichbong .text-wrapper-10 {
+  position: absolute;
+  top: 0;
+  left: 36px;
+  font-family: var(--body-bold-font-family);
+  font-weight: var(--body-bold-font-weight);
+  color: #8db1ae;
+  font-size: var(--body-bold-font-size);
+  text-align: right;
+  letter-spacing: var(--body-bold-letter-spacing);
+  line-height: var(--body-bold-line-height);
+  white-space: nowrap;
+  font-style: var(--body-bold-font-style);
+}
+
+.programs-chichbong .frame-9 {
+  position: relative;
+  width: 139px;
+  height: 24px;
+}
+
+.programs-chichbong .div-lisence {
+  display: flex;
+  width: 1145px;
+  height: 66px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px 0px 0px;
+  position: absolute;
+  top: 219px;
+  left: 96px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: #598d88;
+}
+
+.programs-chichbong .copyright {
+  display: flex;
+  width: 204px;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 8px;
+  padding: 0px 0px 0px 16px;
+  position: relative;
+}
+
+.programs-chichbong .copyright-by {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  margin-left: -8px;
+  margin-right: -8px;
+  font-family: "Nunito", Helvetica;
+  font-weight: 400;
+  color: #598d88;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.programs-chichbong .social-media {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0px 16px 0px 0px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.programs-chichbong .facebook-logo {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.programs-chichbong .content-2 {
+  display: flex;
+  width: 1181px;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 2px;
+  left: 80px;
+}
+
+.programs-chichbong .div-6 {
+  display: flex;
+  width: 370px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.programs-chichbong .ghost-button-2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--primitives-spacing-3) var(--primitives-spacing-5) var(--primitives-spacing-3)
+    var(--primitives-spacing-5);
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: var(--primitives-spacing-3);
+}
+
+.programs-chichbong .th-ng-tin-3 {
+  width: fit-content;
+  color: var(--tokens-text-text-brand);
+  text-align: center;
+  line-height: 20px;
+  white-space: nowrap;
+  position: relative;
+  margin-top: -1px;
+  font-family: "Nunito", Helvetica;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+}
+
+.programs-chichbong .logo-2 {
+  position: relative;
+  width: 117px;
+  height: 53px;
+  object-fit: cover;
+}
+
+.programs-chichbong .frame-10 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: fixed;
+  top: 806px;
+  left: 1257px;
+}
+
+.programs-chichbong .img-wrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  background-color: var(--white);
+  border-radius: 27px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px -2px #1b242c1f, 0px 2px 2px -1px #1b232c0a;
+}
+
+.programs-chichbong .img-3 {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 5px;
+  left: 5px;
+}
+
+.programs-chichbong .content-programs-chichbong {
+  display: flex;
+  flex-direction: column;
+  width: 336px;
+  height: 397px;
+  align-items: flex-start;
+  gap: var(--primitives-spacing-5);
+  padding: 46px 33px;
+  position: relative;
+  left: 2px;
+}
+
+
+/* Navbar */
+.programs-chichbong .overlap-group-wrapper {
+  position: fixed;
+  width: 1440px;
+  height: 116px;
+  top: 0;
+  left: 0;
+}
+
+.programs-chichbong .overlap-group {
+  position: relative;
+  width: 1374px;
+  height: 89px;
+  top: 27px;
+  left: 33px;
+  background-image: url(/home-page-2/img/union-shape-1.svg);
+  background-size: 100% 100%;
+}
+
+.programs-chichbong .content {
+  display: flex;
+  width: 1181px;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 2px;
+  left: 98px;
+}
+
+.programs-chichbong .div-2-chichbong {
+  display: flex;
+  width: 370px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.programs-chichbong .ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--primitives-spacing-3) var(--primitives-spacing-5) var(--primitives-spacing-3)
+    var(--primitives-spacing-5);
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: var(--primitives-spacing-3);
+}
+
+.programs-chichbong .th-ng-tin {
+  position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Nunito", Helvetica;
+    font-weight: 700;
+    color: var(--tokens-text-text-primary);
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.18px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.programs-chichbong .th-ng-tin-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Nunito", Helvetica;
+  font-weight: 700;
+  color: var(--tokens-text-text-primary);
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: -0.18px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.programs-chichbong .content-3 {
+  display: flex;
+  width: 1181px;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 2px;
+  left: 98px;
+}
+
+.programs-chichbong .div-nav {
+  position: fixed;
+  width: 1440px;
+  height: 116px;
+  top: -2px;
+  left: 0;
+}
+
+.programs-chichbong .content-wrapper {
+  position: relative;
+  width: 1374px;
+  height: 89px;
+  top: 27px;
+  left: 33px;
+  background-size: 100% 100%;
+}
+
+/* End navbar */
