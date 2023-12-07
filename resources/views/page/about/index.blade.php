@@ -235,7 +235,7 @@
             <div class="div-avatar"></div>
           </div>
         </div>
-        @include('user-interface.header')
+        @include('page.partial.header')
         <div class="frame-8">
           <div class="img-wrapper"><img class="img-3" src="{{ asset('home-page-2/img/zalo-png-0.png') }}" /></div>
           <div class="img-wrapper"><img class="img-3" src="{{ asset('home-page-2/img/messenger-jpeg-0.png') }}" /></div>
