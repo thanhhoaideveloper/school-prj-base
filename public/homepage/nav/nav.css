@@ -1,0 +1,82 @@
+.HOMEPAGE .div-6 {
+    position: absolute;
+    width: 1440px;
+    height: 116px;
+    top: -2px;
+    left: 0;
+  }
+  
+  div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .HOMEPAGE .content-wrapper {
+    position: fixed;
+    width: 1374px;
+    height: 89px;
+    margin: 30px;
+    z-index: 10;
+    background-image: url(./img/union-shape-1.svg);
+    background-size: 100% 100%;
+  }
+  
+  .HOMEPAGE .content-3 {
+    display: flex;
+    width: 1181px;
+    height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 2px;
+    left: 98px;
+  }
+  
+  .HOMEPAGE .div-7 {
+    display: flex;
+    width: 370px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .HOMEPAGE .ghost-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: var(--primitives-spacing-3) var(--primitives-spacing-5) var(--primitives-spacing-3)
+      var(--primitives-spacing-5);
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: var(--primitives-spacing-3);
+  }
+  
+  .HOMEPAGE .th-ng-tin {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Nunito", Helvetica;
+    font-weight: 700;
+    color: var(--tokens-text-text-primary);
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: -0.18px;
+    line-height: 20px;
+    white-space: nowrap;
+  }
+  
+  .HOMEPAGE .caret-up {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .HOMEPAGE .logo-2 {
+    position: relative;
+    width: 117px;
+    height: 53px;
+    object-fit: cover;
+  }
