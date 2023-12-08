@@ -12,7 +12,7 @@
     </div>
     <div class="address">
         <p class="text-wrapper-15">
-            Số 1, Đường Số 14, Khu Phố 5, Phường An Phú, Thành phố Thủ Đức, Thành phố Hồ Chí Minh
+            Số 1, Đường Số 14, Khu Phố 5, Phường An Phú,<br/> Thành phố Thủ Đức, Thành phố Hồ Chí Minh
         </p>
     </div>
     <div class="contact">

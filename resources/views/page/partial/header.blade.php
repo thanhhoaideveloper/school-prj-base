@@ -11,18 +11,19 @@
                     <div class="menuItem">
                         <ul class="menuItem-main">
                             <li>
-                                <a href="{{ route('about') }}">Về chúng tôi</a>
+                                <a href="#">Về chúng tôi</a>
                             </li>
-                            <li>
+                            <li class="li-custom">
                                 <a href="#">
                                     <div class="th-ng-tin" style="float: left; margin-right: .5rem">
                                         Chương trình học
                                     </div>
                                     <img class="caret-up" src="{{ asset('homepage/img/caretup.svg') }}" />
                                     <ul class="sub-program">
-                                        <li> Lớp Chích Bông </li>
-                                        <li> Lớp Sẻ Nâu </li>
-                                        <li> Lớp Bồ Câu </li>
+                                        <li> <a href="{{ route('chich-bong') }}" style="display: inline;"
+                                                class="a-link">Lớp Chích Bông</a> </li>
+                                        <li> <a href="{{ route('se-nau') }}" class="a-link">Lớp Sẻ Nâu</a> </li>
+                                        <li> <a href="{{ route('bo-cau') }}" class="a-link">Lớp Bồ Câu</a> </li>
                                     </ul>
                                 </a>
                             </li>
@@ -45,7 +46,15 @@
                     <div class="th-ng-tin">Về chúng tôi</div>
                 </div>
                 <div class="ghost-button">
-                    <div class="th-ng-tin">Chương trình học</div>
+                    <div class="th-ng-tin">
+                        Chương trình học
+                        <input type="checkbox" class="input-sub-program" />
+                        <ul class="sub-program-main sub-program">
+                            <li> <a href="{{ route('chich-bong') }}" class="a-link">Lớp Chích Bông</a> </li>
+                            <li> <a href="{{ route('se-nau') }}" class="a-link">Lớp Sẻ Nâu</a> </li>
+                            <li> <a href="{{ route('bo-cau') }}" class="a-link">Lớp Bồ Câu</a> </li>
+                        </ul>
+                    </div>
                     <img class="caret-up" src="{{ asset('homepage/img/caretup.svg') }}" />
                 </div>
             </div>

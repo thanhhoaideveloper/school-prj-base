@@ -34,7 +34,7 @@
                     </div>
                     <div class="div-content-4">
                         <div class="div-herotext">
-                            <span class="text-wrapper-13">NIDO Montessori House of Children</span>
+                            <span class="text-wrapper-13">Nido Montessori House of Children</span>
                             <p class="text-wrapper-14">
                                 Ngôi nhà trẻ thơ ấm áp và tự do được vận hành dựa trên phương pháp giáo dục Montessori
                             </p>
@@ -60,7 +60,7 @@
                             lao, một dạng
                             tâm trí học hỏi và khám phá đặc biệt chỉ có ở giai đoạn này.
                         </p>
-                        <div class="primary-button"><button class="button"><a href="{{ route('about') }}">XEM CHI
+                        <div class="primary-button"><button class="button"><a href="{{ route('about') }}" class='a-link'>XEM CHI
                                     TIẾT</a></button></div>
                     </div>
                 </div>
@@ -547,62 +547,9 @@
                 <img class="cloud" src="{{ asset('homepage/img/cloud-1.png') }}" />
             </div>
 
-            <!-- part 9 -->
-            <div class="div-board-contact-container">
-                <div class="div-board-contact">
-                    <div class="div-submit"><button class="button">GỬI THÔNG TIN</button></div>
-                    <div class="frame-7">
-                        <div class="div-5">
-                            <div class="text-wrapper-24">HỌ TÊN CỦA ANH/CHỊ</div>
-                            <div class="input">
-                                <div class="text-wrapper-25">Nguyễn Văn A</div>
-                            </div>
-                        </div>
-                        <div class="div-5">
-                            <div class="input-field"><label class="text-wrapper-24" for="input-1">EMAIL</label>
-                            </div>
-                            <input class="input-2" placeholder="homaianh@gmail.com" type="email" id="input-1" />
-                        </div>
-                        <div class="frame-8">
-                            <div class="input-field-2">
-                                <div class="text-wrapper-24">ĐIỆN THOẠI</div>
-                                <div class="input">
-                                    <div class="text-wrapper-25">0393824932</div>
-                                </div>
-                            </div>
-                            <div class="input-field-2">
-                                <div class="tu-i-c-a-con">TUỔI CỦA CON</div>
-                                <div class="input">
-                                    <div class="frame-9">
-                                        <div class="text-wrapper-25">2 Tuổi</div>
-                                        <img class="img" src="{{ asset('homepage/img/caretup-1.svg') }}" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-3">
-                            <p class="text-wrapper-26">Câu hỏi dành cho nhà trường?</p>
-                            <div class="rectangle-3"></div>
-                        </div>
-                    </div>
-                    <div class="frame-10">
-                        <div class="frame-11">
-                            <div class="text-wrapper-27">Liên hệ</div>
-                            <div class="flexcontainer">
-                                <p class="text">
-                                    <span class="text-wrapper-28">For enrolment and tour enquiries please call
-                                        0393064532. Or fill the form, we will contact you.<br /></span>
-                                </p>
-                                <p class="text">
-                                    <span class="text-wrapper-28">Our Family Care Team are available between 8:30am and
-                                        5.30pm on Monday to Friday.</span>
-                                </p>
-                            </div>
-                        </div>
-                        <img class="rectangle-4" src="{{ asset('homepage/img/rectangle-4181.svg') }}" />
-                    </div>
-                </div>
-            </div>
+            {{-- Start contact form --}}
+            @include('page.partial.contact')
+            {{-- End contact form --}}
 
 
             <!-- part 10 -->
