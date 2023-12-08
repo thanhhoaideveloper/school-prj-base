@@ -32,11 +32,11 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/bai-viet', 'article')->name('article');
     Route::get('/bai-viet/{slug}', 'articleDetail')->name('articleDetail');
     // program
-    Route::get('/chuong-trinh-hoc/se-nau', 'seNau');
-    Route::get('/chuong-trinh-hoc/chich-bong', 'chichBong');
-    Route::get('/chuong-trinh-hoc/bo-cau', 'boCau');
+    Route::get('/chuong-trinh-hoc/se-nau', 'seNau')->name('se-nau');
+    Route::get('/chuong-trinh-hoc/chich-bong', 'chichBong')->name('chich-bong');
+    Route::get('/chuong-trinh-hoc/bo-cau', 'boCau')->name('bo-cau');
     // contact
-    Route::get('/lien-he', 'contact');
+    Route::get('/lien-he', 'contact')->name('contact');
 });
 
 
