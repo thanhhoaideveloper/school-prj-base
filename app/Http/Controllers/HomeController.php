@@ -21,8 +21,10 @@ class HomeController extends Controller
         $viewModel = [];
         // Lấy ra sự kiện mới nhất.
         $viewModel["event"] = $this->articleService->where('type', 1)->orderBy('id', 'desc')->first();
+        //dd($viewModel);
         // Lấy ra top 3 bài viết mới nhất
-        $viewModel["articles"] = $this->articleService->getModel()::where('type', '<>', 1)->orderBy('id', 'desc')->limit(3);
+        $viewModel["articles"] = $this->articleService->whereNot('type', '<>', 1)->orderBy('id', 'desc')->take(3)->get();
+        //dd($viewModel);
         return view("index", $viewModel);
     }
 

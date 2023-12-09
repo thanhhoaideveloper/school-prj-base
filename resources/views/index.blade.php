@@ -15,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Home Page</title>
+    <title>NIDO Montessori House of Children</title>
 </head>
 
 <body>
@@ -60,7 +60,8 @@
                             lao, một dạng
                             tâm trí học hỏi và khám phá đặc biệt chỉ có ở giai đoạn này.
                         </p>
-                        <div class="primary-button"><button class="button"><a href="{{ route('about') }}" class='a-link'>XEM CHI
+                        <div class="primary-button"><button class="button"><a href="{{ route('about') }}"
+                                    class='a-link'>XEM CHI
                                     TIẾT</a></button></div>
                     </div>
                 </div>
@@ -76,6 +77,31 @@
                         <img class="asset" src="{{ asset('homepage/img/asset-20-1.png') }}" />
                     </div>
                 </div>
+                @If($event != null)
+                <div class="frame-13">
+                    <div class="overlap-5">
+                        <div class="group"></div>
+                        <div class="frame-wrapper">
+                            <div class="frame-14">
+                                <img class="rectangle-5" src="{{ $event->thumbnail }}" />
+                                <div class="frame-15">
+                                    <div class="frame-16">
+                                        <div class="frame-17">
+                                            <div class="text-wrapper-30">{{ $event->label }}</div>
+                                        </div>
+                                        <p class="text-wrapper-31">{{ $event->title }}
+                                        </p>
+                                    </div>
+                                    <div class="frame-18">
+                                        <img class="img" src="{{ asset('homepage/img/clock.svg') }}" />
+                                        <div class="text-wrapper-32">18 Nov 2023</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @else
                 <div class="frame-13">
                     <div class="overlap-5">
                         <div class="group"></div>
@@ -99,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
 
             <!-- part 4 -->
@@ -199,108 +226,148 @@
                                 aria-label="Slide 3" class=""></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="border-carousel">
-                                    <div class="overlap-group">
-                                        <div class="div-content">
-                                            <div class="image"></div>
-                                            <div class="content-container">
-                                                <div class="content">
-                                                    <div class="tag">
-                                                        <div class="text-wrapper">Education</div>
-                                                    </div>
-                                                    <div class="title">
-                                                        <p class="p">Hslide 1y</p>
-                                                        <p class="text-wrapper-2">
-                                                            In the modern world, having financial literacy is a crucial
-                                                            skill for children to navigate
-                                                            life successfully. While it may seem early to teach
-                                                            pre-schoolers about money, introducing
-                                                            them to basic concepts in a Montessori-inspired way can lay
-                                                            a strong foundation for their
-                                                            future financial understanding.
-                                                        </p>
+                            @if ($articles->isNotEmpty())
+                                @foreach ($articles as $key => $article)
+                                    <div class="carousel-item @if ($key == 0) active @endif">
+                                        <div class="border-carousel">
+                                            <div class="overlap-group">
+                                                <div class="div-content">
+                                                    <div class="image"><img src="{{ $article->thumbnail }}" class="image"/></div>
+                                                    <div class="content-container">
+                                                        <div class="content">
+                                                            <div class="tag">
+                                                                <div class="text-wrapper">{{ $article->label }}</div>
+                                                            </div>
+                                                            <div class="title">
+                                                                <p class="p">{{ $article->title }}</p>
+                                                                <p class="text-wrapper-2">
+                                                                    {{ $article->description }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accent">
+                                                            <div class="text-wrapper-3">Nov 4</div>
+                                                            <div class="text-wrapper-3">·</div>
+                                                            <div class="text-wrapper-3">10 min read</div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="accent">
-                                                    <div class="text-wrapper-3">Nov 4</div>
-                                                    <div class="text-wrapper-3">·</div>
-                                                    <div class="text-wrapper-3">10 min read</div>
-                                                </div>
+                                                <img class="heart"
+                                                    src="{{ asset('homepage/img/heart-3x-1.png') }}" />
                                             </div>
                                         </div>
-                                        <img class="heart" src="{{ asset('homepage/img/heart-3x-1.png') }}" />
                                     </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="border-carousel">
-                                    <div class="overlap-group">
-                                        <div class="div-content">
-                                            <div class="image"></div>
-                                            <div class="content-container">
-                                                <div class="content">
-                                                    <div class="tag">
-                                                        <div class="text-wrapper">123</div>
+                                @endforeach
+                            @else
+                                <div class="carousel-item active">
+                                    <div class="border-carousel">
+                                        <div class="overlap-group">
+                                            <div class="div-content">
+                                                <div class="image"></div>
+                                                <div class="content-container">
+                                                    <div class="content">
+                                                        <div class="tag">
+                                                            <div class="text-wrapper">Education</div>
+                                                        </div>
+                                                        <div class="title">
+                                                            <p class="p">Hslide 1y</p>
+                                                            <p class="text-wrapper-2">
+                                                                In the modern world, having financial literacy is a
+                                                                crucial
+                                                                skill for children to navigate
+                                                                life successfully. While it may seem early to teach
+                                                                pre-schoolers about money, introducing
+                                                                them to basic concepts in a Montessori-inspired way can
+                                                                lay
+                                                                a strong foundation for their
+                                                                future financial understanding.
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div class="title">
-                                                        <p class="p">Slide 3</p>
-                                                        <p class="text-wrapper-2">
-                                                            In the modern world, having financial literacy is a crucial
-                                                            skill for children to navigate
-                                                            life successfully. While it may seem early to teach
-                                                            pre-schoolers about money, introducing
-                                                            them to basic concepts in a Montessori-inspired way can lay
-                                                            a strong foundation for their
-                                                            future financial understanding.
-                                                        </p>
+                                                    <div class="accent">
+                                                        <div class="text-wrapper-3">Nov 4</div>
+                                                        <div class="text-wrapper-3">·</div>
+                                                        <div class="text-wrapper-3">10 min read</div>
                                                     </div>
-                                                </div>
-                                                <div class="accent">
-                                                    <div class="text-wrapper-3">Nov 4</div>
-                                                    <div class="text-wrapper-3">·</div>
-                                                    <div class="text-wrapper-3">10 min read</div>
                                                 </div>
                                             </div>
+                                            <img class="heart" src="{{ asset('homepage/img/heart-3x-1.png') }}" />
                                         </div>
-                                        <img class="heart" src="{{ asset('homepage/img/heart-3x-1.png') }}" />
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="border-carousel">
-                                    <div class="overlap-group">
-                                        <div class="div-content">
-                                            <div class="image"></div>
-                                            <div class="content-container">
-                                                <div class="content">
-                                                    <div class="tag">
-                                                        <div class="text-wrapper">Alo</div>
+                                <div class="carousel-item">
+                                    <div class="border-carousel">
+                                        <div class="overlap-group">
+                                            <div class="div-content">
+                                                <div class="image"></div>
+                                                <div class="content-container">
+                                                    <div class="content">
+                                                        <div class="tag">
+                                                            <div class="text-wrapper">123</div>
+                                                        </div>
+                                                        <div class="title">
+                                                            <p class="p">Slide 3</p>
+                                                            <p class="text-wrapper-2">
+                                                                In the modern world, having financial literacy is a
+                                                                crucial
+                                                                skill for children to navigate
+                                                                life successfully. While it may seem early to teach
+                                                                pre-schoolers about money, introducing
+                                                                them to basic concepts in a Montessori-inspired way can
+                                                                lay
+                                                                a strong foundation for their
+                                                                future financial understanding.
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div class="title">
-                                                        <p class="p">How to Teach Preschoolers About Money</p>
-                                                        <p class="text-wrapper-2">
-                                                            In the modern world, having financial literacy is a crucial
-                                                            skill for children to navigate
-                                                            life successfully. While it may seem early to teach
-                                                            pre-schoolers about money, introducing
-                                                            them to basic concepts in a Montessori-inspired way can lay
-                                                            a strong foundation for their
-                                                            future financial understanding.
-                                                        </p>
+                                                    <div class="accent">
+                                                        <div class="text-wrapper-3">Nov 4</div>
+                                                        <div class="text-wrapper-3">·</div>
+                                                        <div class="text-wrapper-3">10 min read</div>
                                                     </div>
-                                                </div>
-                                                <div class="accent">
-                                                    <div class="text-wrapper-3">Nov 4</div>
-                                                    <div class="text-wrapper-3">·</div>
-                                                    <div class="text-wrapper-3">10 min read</div>
                                                 </div>
                                             </div>
+                                            <img class="heart" src="{{ asset('homepage/img/heart-3x-1.png') }}" />
                                         </div>
-                                        <img class="heart" src="{{ asset('homepage/img/heart-3x-1.png') }}" />
                                     </div>
                                 </div>
-                            </div>
+                                <div class="carousel-item">
+                                    <div class="border-carousel">
+                                        <div class="overlap-group">
+                                            <div class="div-content">
+                                                <div class="image"></div>
+                                                <div class="content-container">
+                                                    <div class="content">
+                                                        <div class="tag">
+                                                            <div class="text-wrapper">Alo</div>
+                                                        </div>
+                                                        <div class="title">
+                                                            <p class="p">How to Teach Preschoolers About Money</p>
+                                                            <p class="text-wrapper-2">
+                                                                In the modern world, having financial literacy is a
+                                                                crucial
+                                                                skill for children to navigate
+                                                                life successfully. While it may seem early to teach
+                                                                pre-schoolers about money, introducing
+                                                                them to basic concepts in a Montessori-inspired way can
+                                                                lay
+                                                                a strong foundation for their
+                                                                future financial understanding.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accent">
+                                                        <div class="text-wrapper-3">Nov 4</div>
+                                                        <div class="text-wrapper-3">·</div>
+                                                        <div class="text-wrapper-3">10 min read</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img class="heart" src="{{ asset('homepage/img/heart-3x-1.png') }}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                         <button class="carousel-control-prev" type="button"
                             data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

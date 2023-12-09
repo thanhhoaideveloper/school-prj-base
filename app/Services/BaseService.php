@@ -114,6 +114,12 @@ class BaseService
         return $result;
     }
 
+    public function whereNot($operator, $operator2, $value)
+    {
+        $result = $this->model->where($operator, $operator2, $value);
+        return $result;
+    }
+
     public function getModel()
     {
         return $this->model;

@@ -4,15 +4,15 @@
             <div class="copyright-by">© Copyright&nbsp;&nbsp;2023&nbsp;&nbsp;by NIDO Ltd.</div>
         </div>
         <div class="social-media">
-            <img class="img" src="img/facebooklogo.svg" />
-            <img class="img" src="img/instagramlogo-1.svg" />
-            <img class="img" src="img/tiktoklogo-1.svg" />
-            <img class="img" src="img/youtubelogo-1.svg" />
+            <img class="img" src="{{ asset('homepage/img/facebooklogo.svg') }}" />
+            <img class="img" src="{{ asset('homepage/img/instagramlogo-1.svg') }}" />
+            <img class="img" src="{{ asset('homepage/img/tiktoklogo-1.svg') }}" />
+            <img class="img" src="{{ asset('homepage/img/youtubelogo-1.svg') }}" />
         </div>
     </div>
     <div class="address">
         <p class="text-wrapper-15">
-            Số 1, Đường Số 14, Khu Phố 5, Phường An Phú,<br/> Thành phố Thủ Đức, Thành phố Hồ Chí Minh
+            Số 1, Đường Số 14, Khu Phố 5, Phường An Phú,<br /> Thành phố Thủ Đức, Thành phố Hồ Chí Minh
         </p>
     </div>
     <div class="contact">
