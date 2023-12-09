@@ -11,7 +11,7 @@
                     <div class="menuItem">
                         <ul class="menuItem-main">
                             <li>
-                                <a href="#">Về chúng tôi</a>
+                                <a href="{{ route('about') }}">Về chúng tôi</a>
                             </li>
                             <li class="li-custom">
                                 <a href="#">
@@ -43,7 +43,7 @@
         <div class="content-3">
             <div class="div-7">
                 <div class="ghost-button">
-                    <div class="th-ng-tin">Về chúng tôi</div>
+                    <a href="{{ route('about') }}"><div class="th-ng-tin">Về chúng tôi</div></a>
                 </div>
                 <div class="ghost-button">
                     <div class="th-ng-tin">
