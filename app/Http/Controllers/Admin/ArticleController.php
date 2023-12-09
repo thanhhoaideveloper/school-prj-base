@@ -64,16 +64,22 @@ class ArticleController extends Controller
             
             // Insert label from type
             if($data['type'] == 1){
-                $data['label'] = "Loại 1";
+                $data['label'] = "Sự kiện";
             }
             else if ($data['type'] == 2) {
-                $data['label'] = "Loại 2";
+                $data['label'] = "Montessori 0-3";
             }
             else if ($data['type'] == 3) {
-                $data['label'] = "Loại 3";
+                $data['label'] = "Montessori 3-6";
             }
             else if ($data['type'] == 4) {
-                $data['label'] = "Loại 4";
+                $data['label'] = "Làm cha mẹ";
+            }
+            else if ($data['type'] == 5) {
+                $data['label'] = "Sách hay";
+            }
+            else if ($data['type'] == 6) {
+                $data['label'] = "Địa điểm vui chơi";
             }
 
             if ($request->id) {
